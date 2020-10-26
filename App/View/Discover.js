@@ -1,18 +1,27 @@
 import React from "react";
-import { View, Button, Text, StyleSheet, TouchableOpacity } from "react-native";
-
+import {
+  Platform,
+  Dimensions,
+  View,
+  Button,
+  Text,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
+import Home from "../View/Home"
+const isAndroid = Platform.OS == 'android'
+var { width, height } = Dimensions.get('window');
 const Discover = ({ navigation }) => {
   return (
     <View style={styles.center}>
-      <Text>This is the Discover screen</Text>
-      {/* <TouchableOpacity
-       
-       onPress={() => navigation.navigate("About")} // We added an onPress event which would navigate to the About screen
-      >
-          <Text>
-              adjflkhkjg
-          </Text>
-          </TouchableOpacity> */}
+     
+     
+     
+      <View style={[{backgroundColor:'#000'},styles.center]}>
+
+        <Text style={{paddingVertical:10,backgroundColor:"#fff",}}>dsdfsdfsd</Text>
+        
+    </View>
     </View>
   );
 };

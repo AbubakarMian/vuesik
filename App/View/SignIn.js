@@ -25,7 +25,7 @@ const SignIn = ({ navigation }) => {
                                 <LinearGradient
                                     start={{ x: 0.2, y: 0.25 }} end={{ x: 0.7, y: 1.0 }}
                                     colors={['#2e3192','#800080', '#93278f']}
-                                    style={{ padding: 10, borderRadius: 5 , height:45}}>
+                                    style={{ padding: 10, borderRadius: 30 , height:45}}>
                                     <TouchableOpacity
                                         style={{flexDirection:'row' ,}}
                                         onPress={() => navigation.navigate('Home')}>

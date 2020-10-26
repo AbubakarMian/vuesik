@@ -7,6 +7,7 @@ import Inbox from "../View/Inbox";
 import Profile from "../View/Profile";
 import Camera from "../View/Camera";
 import Discover from "../View/Discover";
+import SignInForm from "../View/SignInForm";
 
 const Stack = createStackNavigator();
 
@@ -23,10 +24,12 @@ const MainStackNavigator = () => {
           headerBackTitle: "Back",
         }}
       >
+        <Stack.Screen name="SignInForm" component={SignInForm} />
         <Stack.Screen name="SignIn" component={SignIn}  
-        options={({ route }) => ({
-            tabBarVisible: this.getTabBarVisibility(route)
-          })}/>
+        // options={({ route }) => ({
+        //   tabBarVisible: this.getTabBarVisibility(route)
+        // })}
+        />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     );
