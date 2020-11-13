@@ -19,6 +19,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { MainStackNavigator } from "./App/Navigation/StackNavigator";
 
 import { BottomTabNavigator  } from "./App/Navigation/TabNavigator";
+import Example from './App/View/Example';
 
 
 
@@ -37,6 +38,7 @@ export default class App extends Component {
       // <Provider store={configureStore}>
       <View style={{flex: 1}}>
         <StatusBar hidden={true} translucent={true} />
+     
             <NavigationContainer>
               <BottomTabNavigator/>
             </NavigationContainer>
