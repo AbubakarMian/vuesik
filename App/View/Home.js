@@ -1,31 +1,43 @@
-import React from "react";
-import { View, Button, Text, StyleSheet, TouchableOpacity } from "react-native";
-
-import { NavigationContainer } from "@react-navigation/native";
-const Home = ({ navigation }) => {
+import * as React from 'react';
+import { View, StyleSheet, Dimensions } from 'react-native';
+import { TabView, SceneMap } from 'react-native-tab-view';
+import MyViews from "../View/MyVues";
+ 
+const FirstRoute = () => (
+  <MyViews/>
+);
+ 
+const SecondRoute = () => (
+  <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
+);
+ 
+const initialLayout = { width: Dimensions.get('window').width };
+ 
+export default function TabViewExample() {
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'first', title: 'Following' },
+    { key: 'second', title: 'My Views' },
+  ]);
+ 
+  const renderScene = SceneMap({
+    first: FirstRoute,
+    second: SecondRoute,
+  });
+ 
   return (
-    <View >
-      <Text>This is the home screen</Text>
-      {/* <TouchableOpacity
-       
-       onPress={() => navigation.navigate("About")} // We added an onPress event which would navigate to the About screen
-      >
-          <Text>
-              adjflkhkjg
-          </Text>
-          </TouchableOpacity> */}
-          
-    </View>
+    <TabView
+  
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={initialLayout}
+    />
   );
-};
-
+}
+ 
 const styles = StyleSheet.create({
-  center: {
+  scene: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
   },
 });
-
-export default Home;
