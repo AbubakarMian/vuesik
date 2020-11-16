@@ -28,7 +28,9 @@ export default class Effect extends React.Component{
                   <View style={{position:'absolute',
                   }}>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress={()=>this.props.navigation.navigate('VideoComplete')}
+                >
                 <Image
                   style={{height:30,width:30}}
                   source={require('../images/icons/Effecttick.png')}

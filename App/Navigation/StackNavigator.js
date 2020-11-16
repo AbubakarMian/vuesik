@@ -34,18 +34,22 @@ const MainStackNavigator = () => {
           
           headerShown:false,
           headerStyle: {
-            // backgroundColor: "#9AC4F8",
+            backgroundColor: "#9AC4F8",
           },
           headerTintColor: "white",
           headerBackTitle: "Back",
+
+
         }}
+
       >
-                 
-                 <Stack.Screen name="SignIn" component={SignIn}/>
-                 <Stack.Screen name="SignInForm" component={SignInForm}/>
+                  <Stack.Screen name="SignIn" component={SignIn}/> 
+                    <Stack.Screen name="Home" component={Home} />
+     
+                <Stack.Screen name="SignInForm" component={SignInForm}/>
                  <Stack.Screen name="SignUp" component={SignUp} />
                  <Stack.Screen name="SignUpForm" component={SignUpForm} />
-                 <Stack.Screen name="Home" component={Home} />
+              
            {/*  */}
            
            {/* <Stack.Screen name="Following" component={Following}/> */}
