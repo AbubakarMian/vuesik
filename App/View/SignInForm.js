@@ -89,7 +89,7 @@ export default class SignInForm extends React.Component{
                   <TouchableOpacity
                  
                  
-                  // onPress={()=>this.setState({showModal:true})}
+                  onPress={()=>this.setState({showModal:true})}
                   onPress={() => this.props.navigation.navigate('Home')}
                   style={{ flexDirection:"row"}}>
                     

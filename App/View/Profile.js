@@ -37,26 +37,30 @@ var {width,height} = Dimensions.get('window');
                       </Image>
                       <Text style={{fontWeight:'bold',alignSelf:'center'}}>Tampa Curhat Beats</Text>
                       <Text style={{alignSelf:'center',marginBottom:20}}>1307 Videos</Text>
-                      <TouchableOpacity style={{backgroundColor:'darkblue'}}>
-                          <View style={{flexDirection:'row'}}>
-                            <View style={{flexDirection:'column',justifyContent:'center'}}>
-                            <Image
-                            source={require('../images/icons/icon-25.png')}
-                            styles={{height:16,width:8,marginTop:5,marginBottom:5,marginLeft:10,}}
-                            >
-
-                            </Image>
-                            </View>
-                            <View style={{flexDirection:'column'}}>
-                              <Text style={{color:'#fff',marginLeft:5,marginTop:7,textAlign:'center',justifyContent:'center',textAlignVertical:'center', marginRight:5,fontSize:8}}> Add to Favorites Song</Text>
-                            </View>
-                          </View>
-                      </TouchableOpacity>
+            
                   </View>
-                 
+               
                   
               </View>
-       
+            
+                  <View style={{flexDirection:'row',justifyContent:'center',marginBottom:20}}>
+                     <TouchableOpacity>
+                       <View  style={{flexDirection:'row',backgroundColor:'darkblue',paddingVertical:10,paddingHorizontal:15}}>
+                         <View>
+                           <Image
+                           style={{height:22,width:15}}
+                           source={require('../images/icons/icon-25.png')}
+                           >
+
+                           </Image>
+                         </View>
+                         <View style={{}}>
+                           <Text style={{fontSize:10,marginLeft:5,color:"#fff",textAlignVertical:'center',marginTop:5}}>Add To Favorites Song</Text>
+                         </View>
+                       </View>
+                     </TouchableOpacity>
+                  </View>
+             
             </View>
         
           <ScrollView style={[styles.gridView]}>
