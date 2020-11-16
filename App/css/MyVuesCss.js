@@ -35,7 +35,7 @@ export default StyleSheet.create({
             marginLeft:10
          
         },
-        viewBottomColumn2ss:{
+        viewBottomColumn2s:{
             paddingTop:50,
             flex:1,
             flexDirection:'column',

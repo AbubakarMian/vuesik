@@ -2,32 +2,30 @@ import * as React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import MyViews from "../View/MyVues";
- 
-const FirstRoute = () => (
-  <MyViews/>
-);
+import Following from "../View/Following";
+
  
 const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
+  <Following/>
 );
  
 const initialLayout = { width: Dimensions.get('window').width };
  
-export default function TabViewExample() {
+export default function TabViewExample (props) {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'first', title: 'Following' },
-    { key: 'second', title: 'My Views' },
+    { key: 'first', title: 'Following' ,navigation:props.navigation  },
+    { key: 'second', title: 'My Views'  ,navigation:props.navigation },
   ]);
- 
+  const navigation=props.navigation
   const renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute,
+    first: Following,
+    second: MyViews,
   });
- 
+  
   return (
     <TabView
-  
+      // navigation={props.navigation} 
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}

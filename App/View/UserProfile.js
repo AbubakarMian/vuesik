@@ -140,6 +140,9 @@ const styles = StyleSheet.create({
       render(){
           return(
             <View style={[{},styles.center]}>
+
+         
+            
             <View style={[{},styles.displayView]}>
               <View style={{flexDirection:'row'}}>
                   <View>
@@ -167,7 +170,7 @@ const styles = StyleSheet.create({
                  
               </View>
               <View style={{flexDirection:'row',justifyContent:'center',marginRight:20}}>
-              <TouchableOpacity style={{borderWidth:8,backgroundColor:'purple',color:'#fff', borderRadius:50,paddingLeft:20,paddingRight:20,borderColor:'purple',borderLeftColor:'darkblue'}}>
+              <TouchableOpacity style={{borderWidth:8,backgroundColor:'purple', borderRadius:50,paddingLeft:20,paddingRight:20,borderColor:'purple',borderLeftColor:'darkblue'}}>
                         <View>
                           <Text styles={{color:'#ffff'}}>Follow</Text>
                         </View>
@@ -191,7 +194,7 @@ const styles = StyleSheet.create({
                           <Image 
                           source={require('../images/icons/facebook.png')}
                           style={{ 
-                              height:5,width:5,backgroundColor:'darkblue',borderRadius:50,
+                              height:5,width:5,backgroundColor:'darkblue',
                               paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
                       </TouchableOpacity>
                       <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
