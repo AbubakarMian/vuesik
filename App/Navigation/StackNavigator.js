@@ -25,6 +25,11 @@ import VideoComplete from "../View/VideoComplete";
 // import VidioClickAction from "../View/VidioClickAction";
 import Following from "../View/Following";
 import Post from "../View/Post";
+import EditProfile from "../View/EditProfile";
+import CustomizeProfle from '../View/CustomizeProfile';
+import FindFriends from "../View/FindFriends";
+import Favorites from "../View/Favorites";
+import Scan from "../View/Scan";
 const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
@@ -43,6 +48,12 @@ const MainStackNavigator = () => {
         }}
 
       >
+          <Stack.Screen name="Scan" component={Scan}/>
+          <Stack.Screen name="Favorites" component={Favorites}/>
+           <Stack.Screen name="FindFriends" component={FindFriends}/>
+            <Stack.Screen name="EditProfile" component={EditProfile}/>
+            <Stack.Screen name="CustomizeProfle" component={CustomizeProfle}/>
+             <Stack.Screen name="UserProfile" component={UserProfile}/>
                   <Stack.Screen name="SignIn" component={SignIn}/> 
                     <Stack.Screen name="Home" component={Home} />
      
@@ -59,7 +70,7 @@ const MainStackNavigator = () => {
            <Stack.Screen name="PhotoEffect" component ={PhotoEffect}/>
            <Stack.Screen name= "MyVues" component={MyVues}/>
            <Stack.Screen name="SimilerAcounts" component={SimilerAcounts}/>
-           <Stack.Screen name="UserProfile" component={UserProfile}/>
+    
            <Stack.Screen name="Profile" component={Profile}/>
         
 
