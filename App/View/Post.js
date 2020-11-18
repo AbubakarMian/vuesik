@@ -298,74 +298,118 @@ export default class Post extends React.Component{
                 </View>
 
                 </View>
-               {/* Vidio Report Modal  */}
-               <Modal
-                    isVisible={this.state.PostModal}
-                    // onBackdropPress={() => this.setState({VidioReportModal:false})}
-                    style={{height:20,width:width-300,justifyContent:'center',
-                    justifyContent:'center'}}>
-                    <View style={{ height:200,width:width-50, justifyContent:'center',
-                     alignItems:'center',borderRadius:10 }}>
-                     <LinearGradient 
-                                start={{ x: 0.2, y: 0.25 }} end={{ x: 0.8, y: 1.0 }}
-                                colors={['#2e3192','#800080', '#93278f']}
-                                style={{  borderRadius: 5 ,paddingHorizontal:30,height:height/3}}>
-                  <View style={[{flex: 1,
-                    justifyContent:'center',
-                    alignItems: "center",
-                    textAlign: "center",}]}>
-                     
-                   
 
+                 {/* Post Modal  */}
+          <Modal
+            isVisible={this.state.PostModal}
+            // onBackButtonPress={() => this.setState({vidioActionModal: false})}
+
+            style={{
+              height: height/2,
+              width: width/2,
+              justifyContent: 'center',
+              justifyContent: 'center',
+              alignItems:'center'
+            }}>
+             <View style={{alignSelf:'center',marginLeft:'50%'}}>
+             <LinearGradient
+                start={{x: 0.2, y: 0.25}}
+                end={{x: 0.8, y: 1.0}}
+                colors={['#2e3192', '#800080', '#93278f']}
+                style={{
+                  marginLeft: 10,
+                  padding: 10,
+                  borderRadius: 5,
+                  height: 180,
+                  width: 250,
+                
+                }}>
+                    <View style={{justifyContent:'center',}}>
+                    <View>
+    <Image
+    style={{height:40,width:40,alignSelf:'center'}}
+    source={require('../images/icons/Posttick-08.png')}
+    >
+
+    </Image>
+    </View>
+    <View>
+    <Text style={{alignSelf:'center',color:'#fff',fontSize:12,marginTop:5,fontWeight:'bold'}}>Post Vidio publicaly?</Text>
+    </View> 
+    <View>
+    <Text style={{alignSelf:'center',color:'#fff',fontSize:10,marginTop:5}}>Your account is public and your public</Text>
+    <Text style={{alignSelf:'center',color:'#fff',fontSize:10,}}>videos will be visible to everyone.</Text>
+    </View>
+    <View>
+    <Text style={{alignSelf:'center',color:'#fff',fontSize:10,marginTop:5}}>You can make this video private. or switch to</Text>
+    <Text style={{alignSelf:'center',color:'#fff',fontSize:10,}}>a private account in your privacy settings.</Text>
+    <View style={{flexDirection:'row',justifyContent:'center'}}>
+                  <TouchableOpacity
+                   onPress={() =>this.setState({PostModal:false}) }
+                    >
+               <View style={{flexDirection:'row',paddingTop:2, justifyContent:'center'}}>
+              
+                  <View>
+                  <Text
+                       style={{
+                         color: '#fff',
+                         textAlignVertical: 'center',
+                         fontSize: 8,
+                         marginTop: 5,
+                         marginLeft:5,
+                         color:'purple',
+                         backgroundColor:'#fff',
+                         paddingVertical:2,
+                         paddingHorizontal:14,
+                         borderRadius:2,
+                       }}>
+                       Cancel
+                     </Text>
+                  </View>
+               </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                   onPress={() =>this.setState({PostModal:false})}
+                   onPress={()=>this.props.navigation.navigate('Home')}
+                    >
+               <View style={{flexDirection:'row',paddingTop:2, justifyContent:'center',alignSelf:'center'}}>
+              
+                  <View>
+                  <Text
+                       style={{
+                         color: '#fff',
+                         textAlignVertical: 'center',
+                         fontSize: 8,
+                         marginTop: 5,
+                         marginLeft:5,
+                         color:'purple',
+                         backgroundColor:'#fff',
+                         paddingVertical:2,
+                         paddingHorizontal:14,
+                         borderRadius:2,
+                       }}>
+                       Post Now
+                     </Text>
+                  </View>
+               </View>
+            </TouchableOpacity>
+         
+           
+                </View>
+</View> 
+            
+                  
+           
+           
+         </View>
+                </LinearGradient>
+           </View>
+         </Modal>
+          {/*  */}
                
-                     <View style={{flexDirection:'column', }}>
-                           <View style={{flex:1,justifyContent:'center'}}>
-                              <View>
-                                <Image
-                                style={{height:40,width:40,alignSelf:'center'}}
-                                source={require('../images/icons/Posttick-08.png')}
-                                >
-
-                                </Image>
-                              </View>
-                              <View>
-                              <Text style={{alignSelf:'center',color:'#fff',fontSize:12,marginTop:5,fontWeight:'bold'}}>Post Vidio publicaly?</Text>
-                              </View> 
-                              <View>
-                                <Text style={{alignSelf:'center',color:'#fff',fontSize:10,marginTop:5}}>Your account is public and your public</Text>
-                                <Text style={{alignSelf:'center',color:'#fff',fontSize:10,}}>videos will be visible to everyone.</Text>
-                              </View>
-                              <View>
-                                <Text style={{alignSelf:'center',color:'#fff',fontSize:10,marginTop:5}}>You can make this video private. or switch to</Text>
-                                <Text style={{alignSelf:'center',color:'#fff',fontSize:10,}}>a private account in your privacy settings.</Text>
-                              </View>
-                              <View style={{flexDirection:'row'}}>
-                             <TouchableOpacity>
-                                 <View>
-                                     <Text>Cancel</Text>
-                                 </View>
-                             </TouchableOpacity>
-                           </View>
-                           </View>
-                        
-
-                             
-                           </View>
-                           
-                                 
-                     </View>
-                     
-                    
-               
-                              
-                    
-                        
-
-                     </LinearGradient>           
-                    </View> 
-                    </Modal>
-                    {/*  */}
             </View>
         );
     }
 }
+

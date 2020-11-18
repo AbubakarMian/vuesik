@@ -17,12 +17,12 @@ export default StyleSheet.create({
         flexDirection:'column',
       },
       displayView:{
-     
-        height:'30%',
-        width:width,
-        borderBottomWidth:1,
- 
         
+     
+        width:width,
+        height:170,
+     
+        borderBottomWidth:1
       },
       displayImgLogo: {
         
@@ -67,7 +67,7 @@ export default StyleSheet.create({
      
         paddingLeft:5,
         flexDirection:'column',
-        flex:5,
+        flex:4,
         
       },
       displayImgAddBtnIcon:{
@@ -77,19 +77,20 @@ export default StyleSheet.create({
         flexDirection:'column'
       },
       gridView:{
-        flex:3,
-        height: '70%',
         width:width,
+        height:height-200,
+        flex:3,
+        
       },
       gridRow:{
         width:width,
-        height:130,
+        height:150,
         flexDirection:'row',
     
        
       },
       gridColumn1:{
-       
+    
         justifyContent:'center',
         alignItems:'center',
         flexDirection:'column',
@@ -104,15 +105,15 @@ export default StyleSheet.create({
     
       },
       gridColumn3:{
-        
+       
         justifyContent:'center',
         alignItems:'center',
         flexDirection:'column',
         flex:1
       },
       gridColumnImg:{
-        height:60,
-        width:60,
+        height:70,
+        width:70,
         marginLeft:40,
         marginTop:25
       },
@@ -120,13 +121,14 @@ export default StyleSheet.create({
         color:'#fff',
         fontWeight:'bold',
         textAlign:'right',
-        marginRight:15,
+        marginRight:30,
         marginTop:5
-      }
-                                        
+      }                              
 
       
 })
+
+
 
 
 

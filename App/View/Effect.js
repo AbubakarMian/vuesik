@@ -56,53 +56,7 @@ export default class Effect extends React.Component{
 
                   </View>
                 </View>
-                {/* <View style={{position:'relative',height:hight,width:width}}>
-                   <View
-                   style={[{},styles.TopBar]}>
-                      <View style={[{},styles.TopBarImageViw]}>
-                          <TouchableOpacity>
-                              <Image
-                              style={[{},styles.TopbarImg]}
-                              source={require('../images/icons/icon-camera.png')}
-                              >
-                                          
-                              </Image>
-                           
-                          </TouchableOpacity>
-                      </View> 
-                      
-                   
-                 
-                
-                                               
-                   </View>
-                   <View
-                   style={[{},styles.BottomBar]}>
-                    
-                      <View style={[{},styles.BottomBarImageViwBig]}>
-                          <TouchableOpacity>
-                              <Image
-                              style={[{},styles.BottombarImgBig]}
-                              source={require('../images/icons/capture-15.png')}
-                              >
-
-                              </Image>
-                          </TouchableOpacity>
-                      </View> 
-                      <View style={[{},styles.BottomBarImageViwSmall]}>
-                          <TouchableOpacity>
-                              <Image
-                              style={[{},styles.BottombarImgsmall]}
-                              source={require('../images/icons/upload-14.png')}
-                              >
-
-                              </Image>
-                             
-                          </TouchableOpacity>
-                      </View>                                   
-                   </View>
-                </View> */}
-
+               
                 </ImageBackground>
             </View>
         );

@@ -7,7 +7,7 @@ import { View,Text, Image } from "react-native";
 import UserProfile from "../View/UserProfile";
 
 import Profile from "../View/Profile";
-
+import Icon from "../../node_modules/react-native-vector-icons/FontAwesome5";
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -18,13 +18,12 @@ const BottomTabNavigator = () => {
        tabBarOptions={{
        
        
-        labelStyle: { textTransform: "none",fontSize:20,backgroundColor:'#000'  },
-       
+        labelStyle: { textTransform: "none",fontSize:10,backgroundColor:'#000'  },
         activeBackgroundColor:'#000',
         inactiveBackgroundColor:'#000',
-        activeTintColor:'#fff',
-        
-          
+        activeTintColor:'#fff', 
+           
+
     }}
     
        >

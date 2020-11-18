@@ -1,11 +1,11 @@
 import React from "react";
 import {View,Text, Dimensions,StyleSheet} from "react-native";
-
+import styles from "../css/ScanCss";
 var {width,height} = Dimensions.get('window');
 
 
 
-export default class MyVues extends React.Component{
+export default class Scan extends React.Component{
 
     render(){
         return(

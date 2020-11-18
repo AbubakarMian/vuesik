@@ -115,7 +115,7 @@ export default class MyVues extends React.Component {
                     </View>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 340, left: '90%'}}>
+                <View style={{position: 'absolute', top: '60%', left: '90%'}}>
                   <View>
                     <TouchableOpacity
                       onPress={() =>
@@ -129,7 +129,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 380, left: '86%'}}>
+                <View style={{position: 'absolute', top: '65%', left: '86%'}}>
                   <View>
                     <TouchableOpacity
                       onPress={() => this.setState({showModal: true})}>
@@ -141,7 +141,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 410, left: '80%'}}>
+                <View style={{position: 'absolute', top: '70%', left: '80%'}}>
                   <View>
                     <TouchableOpacity>
                       <View>
@@ -152,7 +152,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 440, left: '72%'}}>
+                <View style={{position: 'absolute', top: '75%', left: '72%'}}>
                   <View>
                     <TouchableOpacity onPress={onShare}>
                       <View>
@@ -163,7 +163,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 460, left: '60%'}}>
+                <View style={{position: 'absolute', top: '80%', left: '60%'}}>
                   <View>
                     <TouchableOpacity>
                       <View>
