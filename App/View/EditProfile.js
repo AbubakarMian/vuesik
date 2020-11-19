@@ -28,10 +28,27 @@ var { width, height } = Dimensions.get('window');
       render(){
           return(
             <View style={[{},styles.center]}>
+             <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1}}>
+             <View style={{flex:1, alignSelf:'flex-start'}}>
+               <Image
+               source={require('../images/icons/profile-24.png')}
+               style={{height:30,width:30}}
+               >
 
-         
+               </Image>
+             </View>
+             <View style={{flex:1, justifyContent:'center',alignItems:'center'}}>
+               <Text>Adam Smith</Text>
+             </View>
+             <View style={{flex:1,justifyContent:'flex-end',alignItems:'flex-end'}}>
+              <Text>f</Text>
+            </View>
+            </View>
+            
+           
             
             <View style={[{},styles.displayView]}>
+           
               <View style={{flexDirection:'row'}}>
                 <TouchableOpacity>
                 <View>

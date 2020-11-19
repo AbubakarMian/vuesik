@@ -283,7 +283,11 @@ var {width,height} = Dimensions.get('window');
 </ScrollView>
         <View style={{position:'absolute',bottom:30,}}>
          
-         <TouchableOpacity>
+         <TouchableOpacity
+          onPress={() =>
+                        this.props.navigation.navigate('PhotoEffect')
+                      }
+         >
          <LinearGradient
            start={{ x: 0.2, y: 0.25 }} end={{ x: 0.7, y: 1.0 }}
            colors={['#2e3192','#800080', '#93278f']}

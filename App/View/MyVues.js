@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   Touchable,
   TouchableWithoutFeedback,
+
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from '../css/MyVuesCss';
@@ -20,8 +21,10 @@ import {ScrollView} from 'react-native-gesture-handler';
 import * as Progress from 'react-native-progress';
 import ProgressCircle from 'react-native-progress-circle';
 import {TouchableItem} from 'react-native-tab-view';
+
 var {width, height} = Dimensions.get('window');
 const percentage = 66;
+
 const onShare = async () => {
   try {
     const result = await Share.share({
@@ -62,6 +65,7 @@ export default class MyVues extends React.Component {
         <View style={{height: height, width: width}}>
           <ImageBackground
             source={require('../images/icons/MyVuesbg.jpg')}
+            
             style={{height: height, width: width}}>
             <View style={{width: width, height: height}}>
               <View
@@ -88,6 +92,9 @@ export default class MyVues extends React.Component {
                   <View style={{flexDirection: 'row', width: width / 2 - 10}}>
                     <View>
                       <TouchableOpacity
+                       onPress={() =>
+                        this.props.navigation.navigate('Profile')
+                      }
                         style={{marginTop: 10, marginBottom: 10}}>
                         <View>
                           <Image
@@ -119,11 +126,11 @@ export default class MyVues extends React.Component {
                   <View>
                     <TouchableOpacity
                       onPress={() =>
-                        this.props.route.navigation.navigate('UserProfile')
+                        this.props.navigation.navigate('UserProfile')
                       }>
                       <View>
                         <Image
-                          style={[{height: 30, width: 30}]}
+                          style={[{height: 40, width: 40}]}
                           source={require('../images/icons/icon-32.png')}></Image>
                       </View>
                     </TouchableOpacity>
@@ -135,7 +142,7 @@ export default class MyVues extends React.Component {
                       onPress={() => this.setState({showModal: true})}>
                       <View>
                         <Image
-                          style={[{height: 30, width: 30}]}
+                          style={[{height: 40, width: 40}]}
                           source={require('../images/icons/icon-31.png')}></Image>
                       </View>
                     </TouchableOpacity>
@@ -146,7 +153,7 @@ export default class MyVues extends React.Component {
                     <TouchableOpacity>
                       <View>
                         <Image
-                          style={[{height: 30, width: 30}]}
+                          style={[{height: 40, width: 40}]}
                           source={require('../images/icons/icon-30.png')}></Image>
                       </View>
                     </TouchableOpacity>
@@ -157,7 +164,7 @@ export default class MyVues extends React.Component {
                     <TouchableOpacity onPress={onShare}>
                       <View>
                         <Image
-                          style={[{height: 30, width: 30}]}
+                          style={[{height: 40, width: 40}]}
                           source={require('../images/icons/icon-29.png')}></Image>
                       </View>
                     </TouchableOpacity>
@@ -165,10 +172,12 @@ export default class MyVues extends React.Component {
                 </View>
                 <View style={{position: 'absolute', top: '80%', left: '60%'}}>
                   <View>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                   
+                    >
                       <View>
                         <Image
-                          style={[{height: 30, width: 30}]}
+                          style={[{height: 40, width: 40}]}
                           source={require('../images/icons/icon-33.png')}></Image>
                       </View>
                     </TouchableOpacity>
@@ -539,6 +548,9 @@ export default class MyVues extends React.Component {
                     {/*  */}
         </View>
       </TouchableWithoutFeedback>
+ 
     );
   }
 }
+
+

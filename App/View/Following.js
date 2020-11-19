@@ -157,8 +157,10 @@ export default class MyVues extends React.Component {
                   <View>
                     <TouchableOpacity
                       onPress={() =>
-                        this.props.route.navigation.navigate('UserProfile')
-                      }>
+                        // this.props.route.navigation.navigate('UserProfile')}
+                        this.props.navigation.navigate('UserProfile')}
+                        
+                        >
                       <View>
                         <Image
                           style={[{height: 30, width: 30}]}
