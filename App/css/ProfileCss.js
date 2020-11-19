@@ -18,7 +18,7 @@ export default StyleSheet.create({
       },
       displayView:{
      
-        height:'30%',
+        height:'40%',
         width:width,
         borderBottomWidth:1,
  
@@ -78,7 +78,7 @@ export default StyleSheet.create({
       },
       gridView:{
         flex:3,
-        height: '70%',
+        height: '60%',
         width:width,
       },
       gridRow:{

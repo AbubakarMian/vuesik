@@ -63,10 +63,21 @@ export default class MyVues extends React.Component {
           <ImageBackground
             source={require('../images/icons/bgFOllowing.jpg')}
             style={{height: height, width: width}}>
+            <View style={{marginTop:20,justifyContent:'center',width:width,alignItems:'center',flexDirection:'row'}}>
+                <TouchableOpacity>
+                <Text style={{color:'#fff',marginHorizontal:20,borderBottomWidth:1,borderBottomColor:'#fff',borderStyle:'dashed',borderRadius:1}}>Following</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('MyVues')}
+                >
+                <Text style={{color:'#fff',marginHorizontal:20,color:'#fff',opacity:0.7}}>MyVues</Text>
+                </TouchableOpacity>
+              </View>
             <View style={{width: width, height: height}}>
-            
+              
               <View
                 style={{height: height, width: width, position: 'relative'}}>
+                
                 <View style={{justifyContent:'center',alignItems:'center',paddingVertical:20}}>
                    <View>
                        <Text style={{color:'#fff',fontWeight:'bold',fontSize:20}}>Featured Creaters</Text>
@@ -107,7 +118,7 @@ export default class MyVues extends React.Component {
                 <View
                   style={{
                     position: 'absolute',
-                    top: '62%',
+                    top: '70%',
                     left: '2%',
                     width: '50%',
                   }}>
@@ -153,7 +164,8 @@ export default class MyVues extends React.Component {
                     </View>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 340, left: '90%'}}>
+            
+                <View style={{position: 'absolute', top: '60%', left: '90%'}}>
                   <View>
                     <TouchableOpacity
                       onPress={() =>
@@ -167,7 +179,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 380, left: '86%'}}>
+                <View style={{position: 'absolute', top: '67%', left: '88%'}}>
                   <View>
                     <TouchableOpacity
                       onPress={() => this.setState({showModal: true})}>
@@ -179,7 +191,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 410, left: '80%'}}>
+                <View style={{position: 'absolute', top: '73%', left: '82%'}}>
                   <View>
                     <TouchableOpacity>
                       <View>
@@ -190,7 +202,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 440, left: '72%'}}>
+                <View style={{position: 'absolute', top: '77%', left: '72%'}}>
                   <View>
                     <TouchableOpacity onPress={onShare}>
                       <View>
@@ -201,7 +213,7 @@ export default class MyVues extends React.Component {
                     </TouchableOpacity>
                   </View>
                 </View>
-                <View style={{position: 'absolute', top: 460, left: '60%'}}>
+                <View style={{position: 'absolute', top: '80%', left: '60%'}}>
                   <View>
                     <TouchableOpacity>
                       <View>

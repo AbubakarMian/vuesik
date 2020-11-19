@@ -112,7 +112,9 @@ export default class PhotoEffect extends React.Component{
                           </TouchableOpacity>
                       </View> 
                       <View style={[{},styles.BottomBarImageViw]}>
-                          <TouchableOpacity>
+                          <TouchableOpacity
+                           onPress={()=>this.props.navigation.navigate('Effect')}
+                          >
                               <Image
                               style={[{},styles.TopbarImg]}
                               source={require('../images/icons/capture-15.png')}
@@ -123,7 +125,7 @@ export default class PhotoEffect extends React.Component{
                       </View> 
                       <View style={[{},styles.BottomBarImageViw]}>
                           <TouchableOpacity 
-                          onPress={()=>this.props.navigation.navigate('Effect')}>
+                         >
                               <Image
                               style={[{},styles.TopbarImg]}
                               source={require('../images/icons/upload-14.png')}

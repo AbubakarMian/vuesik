@@ -50,7 +50,7 @@ export default class Post extends React.Component{
                          </TouchableOpacity>
                          <TouchableOpacity>
                              <View style={[{backgroundColor:'purple'},styles.MainViewCol1RowPostBtn]}>
-                                 <Text style={[{},styles.MainViewCol1RowDescBtnTXT]}>#Hashtags</Text>
+                                 <Text style={[{},styles.MainViewCol1RowDescBtnTXT]}>@Friends</Text>
                              </View>
                          </TouchableOpacity>
                      </View>
@@ -311,7 +311,7 @@ export default class Post extends React.Component{
               justifyContent: 'center',
               alignItems:'center'
             }}>
-             <View style={{alignSelf:'center',marginLeft:'50%'}}>
+             <View style={{alignSelf:'center',marginLeft:'50%',justifyContent:'center'}}>
              <LinearGradient
                 start={{x: 0.2, y: 0.25}}
                 end={{x: 0.8, y: 1.0}}
@@ -371,7 +371,7 @@ export default class Post extends React.Component{
 
             <TouchableOpacity
                    onPress={() =>this.setState({PostModal:false})}
-                   onPress={()=>this.props.navigation.navigate('Home')}
+                   onPress={() => this.props.navigation.navigate('MyVues')}
                     >
                <View style={{flexDirection:'row',paddingTop:2, justifyContent:'center',alignSelf:'center'}}>
               

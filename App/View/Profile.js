@@ -281,15 +281,15 @@ var {width,height} = Dimensions.get('window');
  </View>
  
 </ScrollView>
-        <View style={{position:'absolute',bottom:30,}}>
+        <View style={{position:'absolute',bottom:30,left:'30%'}}>
          
          <TouchableOpacity>
          <LinearGradient
            start={{ x: 0.2, y: 0.25 }} end={{ x: 0.7, y: 1.0 }}
            colors={['#2e3192','#800080', '#93278f']}
-           style={{ flexDirection:'row', borderRadius:50,paddingLeft:25,paddingRight:25,paddingBottom:10,paddingTop:5,alignSelf:'center',marginRight:30}} 
+           style={{ flexDirection:'row', borderRadius:50,paddingLeft:25,paddingRight:25,paddingBottom:10,paddingTop:5,alignSelf:'center',marginRight:30,justifyContent:'center'}} 
           >
-           <View>
+           <View style={{justifyContent:'center',alignSelf:'center'}}>
            <Image
            source={require('../images/icons/icon-26.png')}
            style={{height:20,width:10,}}

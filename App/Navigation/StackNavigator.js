@@ -48,13 +48,14 @@ const MainStackNavigator = () => {
         }}
 
       >
+          <Stack.Screen name="SignIn" component={SignIn}/> 
           <Stack.Screen name="Scan" component={Scan}/>
           <Stack.Screen name="Favorites" component={Favorites}/>
            <Stack.Screen name="FindFriends" component={FindFriends}/>
             <Stack.Screen name="EditProfile" component={EditProfile}/>
             <Stack.Screen name="CustomizeProfle" component={CustomizeProfle}/>
              <Stack.Screen name="UserProfile" component={UserProfile}/>
-                  <Stack.Screen name="SignIn" component={SignIn}/> 
+               
                     <Stack.Screen name="Home" component={Home} />
      
                 <Stack.Screen name="SignInForm" component={SignInForm}/>
@@ -63,7 +64,7 @@ const MainStackNavigator = () => {
               
            {/*  */}
            
-           {/* <Stack.Screen name="Following" component={Following}/> */}
+           <Stack.Screen name="Following" component={Following}/>
            <Stack.Screen name ="VideoComplete" component ={VideoComplete}/>
            <Stack.Screen name="Post" component={Post}/>
            <Stack.Screen name="Effect" component={Effect}/>

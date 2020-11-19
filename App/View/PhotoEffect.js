@@ -120,15 +120,7 @@ export default class PhotoEffect extends React.Component{
                           </TouchableOpacity>
                       </View> 
                       <View style={[{},styles.BottomBarImageViw]}>
-                          <TouchableOpacity>
-                              <Image
-                              style={[{},styles.TopbarImg]}
-                              source={require('../images/icons/upload-14.png')}
-                              >
-
-                              </Image>
-                              <Text style={[{},styles.TopbarImgText]}>Upload</Text>
-                          </TouchableOpacity>
+                        
                       </View>                                   
                    </View>
                 </View>
