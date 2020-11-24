@@ -2,7 +2,7 @@ import React from "react";
 
 import {View,Text, Dimensions,StyleSheet, ImageBackground} from "react-native";
 
-var {width,hight} = Dimensions.get('window');
+var {width,height} = Dimensions.get('window');
 
 export default StyleSheet.create({
  
