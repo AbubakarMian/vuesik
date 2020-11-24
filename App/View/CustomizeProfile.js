@@ -1,6 +1,6 @@
 import React from "react";
 import {View,Text, Dimensions,StyleSheet,Image} from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import styles from "../css/CustomizeProfileCss";
 var {width,hight} = Dimensions.get('window');
 
@@ -53,14 +53,14 @@ export default class CustomizeProfile extends React.Component{
                        <View style={[{},styles.mROWCol2]}>
                             <TouchableOpacity>
                               <View>
-                              <Text style={{textAlign:'right', paddingRight:5,color:'#777575'}}>Waleed Hussain
+                              <TextInput style={{textAlign:'right', paddingRight:5,color:'#777575'}}>Waleed Hussain
                               <Image
                               style={{height:15,width:15}}
                               source={require('../images/icons/lessthen-24.png')}
                               >
 
                               </Image>
-                              </Text>
+                              </TextInput>
                               </View>
                             </TouchableOpacity>
                        </View>
@@ -72,14 +72,14 @@ export default class CustomizeProfile extends React.Component{
                        <View style={[{},styles.mROWCol2]}>
                             <TouchableOpacity>
                               <View>
-                              <Text style={{textAlign:'right', paddingRight:5,color:'#777575'}}>waleedhuxain
+                              <TextInput style={{textAlign:'right', paddingRight:5,color:'#777575'}}>waleedhuxain
                               <Image
                               style={{height:15,width:15}}
                               source={require('../images/icons/lessthen-24.png')}
                               >
 
                               </Image>
-                              </Text>
+                              </TextInput>
                               </View>
                             </TouchableOpacity>
                        </View>
@@ -91,14 +91,14 @@ export default class CustomizeProfile extends React.Component{
                        <View style={[{},styles.mROWCol2]}>
                             <TouchableOpacity>
                               <View>
-                              <Text style={{textAlign:'right', paddingRight:5,fontSize:10,color:'#777575'}}>vuesik.com/@waleedhuxain
+                              <TextInput style={{textAlign:'right', paddingRight:5,fontSize:10,color:'#777575'}}>vuesik.com/@waleedhuxain
                               <Image
                               style={{height:15,width:15}}
                               source={require('../images/icons/box-23.png')}
                               >
 
                               </Image>
-                              </Text>
+                              </TextInput>
                               </View>
                             </TouchableOpacity>
                        </View>
@@ -110,14 +110,14 @@ export default class CustomizeProfile extends React.Component{
                        <View style={[{},styles.mROWCol2]}>
                             <TouchableOpacity>
                               <View>
-                              <Text style={{textAlign:'right', paddingRight:5,color:'#777575'}}>Add a bio to your profile
+                              <TextInput style={{textAlign:'right', paddingRight:5,color:'#777575'}}>Add a bio to your profile
                               <Image
                               style={{height:15,width:15}}
                               source={require('../images/icons/lessthen-24.png')}
                               >
 
                               </Image>
-                              </Text>
+                              </TextInput>
                               </View>
                             </TouchableOpacity>
                        </View>
@@ -130,14 +130,14 @@ export default class CustomizeProfile extends React.Component{
                        <View style={[{},styles.mROWCol2]}>
                             <TouchableOpacity>
                               <View>
-                              <Text style={{textAlign:'right', paddingRight:5,fontSize:12,color:'#777575'}}>Add intagram to your profile
+                              <TextInput style={{textAlign:'right', paddingRight:5,fontSize:12,color:'#777575'}}>Add intagram to your profile
                               <Image
                               style={{height:15,width:15}}
                               source={require('../images/icons/lessthen-24.png')}
                               >
 
                               </Image>
-                              </Text>
+                              </TextInput>
                               </View>
                             </TouchableOpacity>
                        </View>
@@ -149,14 +149,14 @@ export default class CustomizeProfile extends React.Component{
                        <View style={[{},styles.mROWCol2]}>
                             <TouchableOpacity>
                               <View>
-                              <Text style={{textAlign:'right', paddingRight:5,fontSize:12,color:'#777575'}}>Add YouTube to your profile
+                              <TextInput style={{textAlign:'right', paddingRight:5,fontSize:12,color:'#777575'}}>Add YouTube to your profile
                               <Image
                               style={{height:15,width:15}}
                               source={require('../images/icons/lessthen-24.png')}
                               >
 
                               </Image>
-                              </Text>
+                              </TextInput>
                               </View>
                             </TouchableOpacity>
                        </View>

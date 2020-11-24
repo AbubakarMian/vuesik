@@ -8,6 +8,7 @@ import UserProfile from "../View/UserProfile";
 
 import Profile from "../View/Profile";
 import Icon from "../../node_modules/react-native-vector-icons/FontAwesome5";
+import EditProfile from "../View/EditProfile";
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -31,7 +32,7 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="Discover" component={DiscoverStackNavigator} />
       <Tab.Screen name="+" component={CameraStackNavigator} />
       <Tab.Screen name="Inbox" component={InboxStackNavigator} />
-      <Tab.Screen name="Me" component={Profile} />
+      <Tab.Screen name="Me" component={EditProfile} />
     </Tab.Navigator>
     
 

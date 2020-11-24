@@ -50,7 +50,7 @@ export default class Post extends React.Component{
                          </TouchableOpacity>
                          <TouchableOpacity>
                              <View style={[{backgroundColor:'purple'},styles.MainViewCol1RowPostBtn]}>
-                                 <Text style={[{},styles.MainViewCol1RowDescBtnTXT]}>@Friends</Text>
+                                 <Text style={[{},styles.MainViewCol1RowDescBtnTXT]}>@friends</Text>
                              </View>
                          </TouchableOpacity>
                      </View>
@@ -371,7 +371,7 @@ export default class Post extends React.Component{
 
             <TouchableOpacity
                    onPress={() =>this.setState({PostModal:false})}
-                   onPress={() => this.props.navigation.navigate('MyVues')}
+                   onPress={()=>this.props.navigation.navigate('MyVues')}
                     >
                <View style={{flexDirection:'row',paddingTop:2, justifyContent:'center',alignSelf:'center'}}>
               

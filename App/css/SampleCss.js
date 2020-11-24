@@ -15,6 +15,8 @@ export default StyleSheet.create({
         textAlign: "center",
         backgroundColor:'#fff',
         flexDirection:'column',
+        height:height,
+        width:width,
       },
 })
 

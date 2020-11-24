@@ -30,6 +30,9 @@ import CustomizeProfle from '../View/CustomizeProfile';
 import FindFriends from "../View/FindFriends";
 import Favorites from "../View/Favorites";
 import Scan from "../View/Scan";
+import Settings from "../View/Settings";
+import ManageAccount from "../View/ManageAccount";
+import Privacy from "../View/Privacy";
 const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
@@ -48,17 +51,18 @@ const MainStackNavigator = () => {
         }}
 
       >
-          <Stack.Screen name="SignIn" component={SignIn}/> 
-          <Stack.Screen name="Scan" component={Scan}/>
-          <Stack.Screen name="Favorites" component={Favorites}/>
-           <Stack.Screen name="FindFriends" component={FindFriends}/>
-            <Stack.Screen name="EditProfile" component={EditProfile}/>
-            <Stack.Screen name="CustomizeProfle" component={CustomizeProfle}/>
-             <Stack.Screen name="UserProfile" component={UserProfile}/>
-               
-                    <Stack.Screen name="Home" component={Home} />
-     
-                <Stack.Screen name="SignInForm" component={SignInForm}/>
+      <Stack.Screen name="Privacy" component={Privacy}/>
+      <Stack.Screen name="Settings" component={Settings}/>
+      <Stack.Screen name="ManageAccount" component={ManageAccount} />
+      <Stack.Screen name="SignIn" component={SignIn}/> 
+      <Stack.Screen name="FindFriends" component={FindFriends}/>
+      <Stack.Screen name="Scan" component={Scan}/>
+      <Stack.Screen name="Favorites" component={Favorites}/>
+      <Stack.Screen name="EditProfile" component={EditProfile}/>
+      <Stack.Screen name="CustomizeProfle" component={CustomizeProfle}/>
+      <Stack.Screen name="UserProfile" component={UserProfile}/>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="SignInForm" component={SignInForm}/>
                  <Stack.Screen name="SignUp" component={SignUp} />
                  <Stack.Screen name="SignUpForm" component={SignUpForm} />
               
