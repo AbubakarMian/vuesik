@@ -311,7 +311,7 @@ export default class Post extends React.Component{
               justifyContent: 'center',
               alignItems:'center'
             }}>
-             <View style={{alignSelf:'center',marginLeft:'50%'}}>
+             <View style={{alignSelf:'center',marginLeft:'50%',justifyContent:'center'}}>
              <LinearGradient
                 start={{x: 0.2, y: 0.25}}
                 end={{x: 0.8, y: 1.0}}

@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     displayView:{
      
       flex:1,
+      height:'40%',
       width:width,
       borderBottomWidth:1
     },
@@ -87,8 +88,8 @@ const styles = StyleSheet.create({
     },
     gridView:{
       width:width,
-      height:height-250,
-      flex:1,
+      height:'60%',
+      flex:2,
       
     },
     gridRow:{
@@ -170,17 +171,17 @@ const styles = StyleSheet.create({
                  
               </View>
               <View style={{flexDirection:'row',justifyContent:'center',marginRight:20}}>
-              <TouchableOpacity style={{borderWidth:8,backgroundColor:'purple', borderRadius:50,paddingLeft:20,paddingRight:20,borderColor:'purple',borderLeftColor:'darkblue'}}>
+              <TouchableOpacity style={{borderWidth:8, borderRadius:50,paddingLeft:30,paddingRight:30,borderColor:'purple',borderLeftColor:'purple',backgroundColor:'purple'}}>
                         <View>
-                          <Text styles={{color:'#ffff'}}>Follow</Text>
+                          <Text style={{color:'#ffff'}}>Follow</Text>
                         </View>
                       </TouchableOpacity>
-                      <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+                      <TouchableOpacity style={{}}>
                           <Image
-                          source={require('../images/icons/icon-51.png')}
+                          source={require('../images/icons/downaerow-25.png')}
                           style={{ 
-                              height:2,width:2,backgroundColor:'darkblue',borderRadius:50,
-                              paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                              height:40,width:40,marginLeft:10,
+                              }}></Image>
                       </TouchableOpacity>
               
               </View>  
@@ -190,26 +191,26 @@ const styles = StyleSheet.create({
 
               
               <View style={{flexDirection:'row',justifyContent:'center',marginTop:10,marginBottom:10,marginRight:20}}>
-              <TouchableOpacity style={{borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+              <TouchableOpacity style={{marginRight:10,marginLeft:10}}>
                           <Image 
-                          source={require('../images/icons/facebook.png')}
+                          source={require('../images/icons/facebook-24.png')}
                           style={{ 
-                              height:5,width:5,backgroundColor:'darkblue',
-                              paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                              height:40,width:40,
+                              }}></Image>
                       </TouchableOpacity>
-                      <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+                      <TouchableOpacity style={{marginRight:10}}>
                           <Image 
-                          source={require('../images/icons/icon-51.png')}
+                          source={require('../images/icons/instegram-23.png')}
                           style={{ 
-                              height:5,width:5,backgroundColor:'darkblue',borderRadius:50,
-                              paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                              height:40,width:40,
+                              }}></Image>
                       </TouchableOpacity>
-                      <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+                      <TouchableOpacity style={{marginRight:10}}>
                           <Image 
-                          source={require('../images/icons/twitter.png')}
+                          source={require('../images/icons/twitter-22.png')}
                           style={{ 
-                              height:5,width:5,backgroundColor:'darkblue',borderRadius:50,
-                              paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                              height:40,width:40,
+                              }}></Image>
                       </TouchableOpacity>
               </View>    
               <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
