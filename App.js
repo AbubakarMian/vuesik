@@ -3,47 +3,39 @@
  * https://github.com/facebook/react-native
  *
  * @format
- * @flow strict-local
+ * @flow
  */
+import * as React from 'react'
+import { StyleSheet, View } from 'react-native'
+import HomeScreen from './src/screens/HomeScreen'
+import PreviewScreen from './src/screens/PreviewScreen'
 
-import React,{Component} from 'react';
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-// import CustomSplashScreen from './app/view/SplashScreen';
-import { NavigationContainer } from "@react-navigation/native";
-import { MainStackNavigator } from "./App/Navigation/StackNavigator";
+import SimpleNavigator from './src/components/simplenavigator/SimpleNavigator'
 
-import { BottomTabNavigator  } from "./App/Navigation/TabNavigator";
-import Example from './App/View/Example';
-
-
-
-
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-    };
-  }
- 
-  render() {
-  
-    return (
-      // <Provider store={configureStore}>
-      <View style={{flex: 1}}>
-        <StatusBar hidden={true} translucent={true} />
-     
-            <NavigationContainer>
-              <BottomTabNavigator/>
-            </NavigationContainer>
-      </View>
-      // </Provider>
-    );
-  }
+const navigatorConfig = {
+  'home': HomeScreen,
+  'preview': PreviewScreen
 }
+
+
+const App: () => React$Node = () => {
+  return (
+    <View style={styles.container}>
+      <SimpleNavigator firstScreen={'home'} navigatorConfig={navigatorConfig}/>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    position: 'absolute',
+    top: 0,
+    left:0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'white'
+  }
+});
+
+export default App;
