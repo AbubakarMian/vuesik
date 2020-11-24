@@ -189,6 +189,7 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation project(':react-native-vector-icons')
+    implementation files('/Users/abubakar/Desktop/MyComputer/DeepAR-Android-v2.2.1/lib/deepar.aar')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
