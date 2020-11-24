@@ -90,7 +90,7 @@ export default class SignInForm extends React.Component{
                  
                  
                   onPress={()=>this.setState({showModal:true})}
-                  onPress={() => this.props.navigation.navigate('Home')}
+                  onPress={() => this.props.navigation.navigate('MyVues')}
                   style={{ flexDirection:"row"}}>
                     
                   <Image style={{

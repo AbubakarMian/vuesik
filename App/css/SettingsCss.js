@@ -16,11 +16,35 @@ export default StyleSheet.create({
         flexDirection:'column',
         height:height,
         width:width,
+       
       },
       TopRow:{
           flexDirection:'row',
-          width:width
+          width:width,borderBottomWidth:1,
+          paddingTop:20,
+          paddingBottom:10,
+          paddingLeft:10
+      },
+      containerView:{
+          width:width-20,
+          alignSelf:'center',
+          paddingVertical:10,
+          borderBottomWidth:1,
+          borderBottomColor:'#aaa'
+      },
+      Heading:{
+         color:'#aaaaaa',
+         fontWeight:'bold'
+      },
+      Row:{
+        flexDirection:'row',
+        marginTop:10
+      },
+      IconImg:{
+        height:30,
+        width:30
       }
+
 })
 
 
