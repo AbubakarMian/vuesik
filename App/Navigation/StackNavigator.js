@@ -12,6 +12,7 @@ import Inbox from "../View/Inbox";
 
 import Camera from "../View/Camera";
 import Discover from "../View/Discover";
+import DeepArScreen from "../../src/screens/HomeScreen";
 import SignInForm from "../View/SignInForm";
 import SignUpForm from "../View/SignUpForm";
 import SignUp from "../View/SignUp";
@@ -33,6 +34,16 @@ import Scan from "../View/Scan";
 import Settings from "../View/Settings";
 import ManageAccount from "../View/ManageAccount";
 import Privacy from "../View/Privacy";
+import Payout from "../View/Payout";
+import PreviewScreen from "../../src/screens/PreviewScreen";
+import MyQrCode from "../View/MyQrCode";
+import PushNotification from "../View/PushNotification";
+import Preferences from "../View/Preferences";
+import DigitalWellbeing from "../View/DigitalWellbeing";
+import FreeUpSpace from "../View/FreeUpSpace";
+import DataSaver from "../View/DataSaver";
+import HelpFaqs from "../View/Hel&Faqs";
+import TermsOfUse from "../View/TermsOfUse";
 const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
@@ -51,20 +62,32 @@ const MainStackNavigator = () => {
         }}
 
       >
-      <Stack.Screen name="Privacy" component={Privacy}/>
-      <Stack.Screen name="Settings" component={Settings}/>
-      <Stack.Screen name="ManageAccount" component={ManageAccount} />
-      <Stack.Screen name="SignIn" component={SignIn}/> 
-      <Stack.Screen name="FindFriends" component={FindFriends}/>
-      <Stack.Screen name="Scan" component={Scan}/>
-      <Stack.Screen name="Favorites" component={Favorites}/>
-      <Stack.Screen name="EditProfile" component={EditProfile}/>
-      <Stack.Screen name="CustomizeProfle" component={CustomizeProfle}/>
-      <Stack.Screen name="UserProfile" component={UserProfile}/>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="SignInForm" component={SignInForm}/>
-                 <Stack.Screen name="SignUp" component={SignUp} />
-                 <Stack.Screen name="SignUpForm" component={SignUpForm} />
+        <Stack.Screen name="Settings" component={Settings}/>
+        <Stack.Screen name="TermsOfUse" component={TermsOfUse}/>
+        <Stack.Screen name="HelpFaqs" component={HelpFaqs}/>
+        <Stack.Screen name="DataSaver" component={DataSaver}/>
+        <Stack.Screen name="FreeUpSpace" component={FreeUpSpace}/>
+        <Stack.Screen name="DigitalWellbeing" component={DigitalWellbeing}/>
+        <Stack.Screen name="Preferences" component={Preferences}/>
+        <Stack.Screen name="PushNotification" component={PushNotification}/>
+          <Stack.Screen name="MyQrCode" component={MyQrCode}/>
+          <Stack.Screen name="Payout" component={Payout}/>
+           <Stack.Screen name="SignIn" component={SignIn}/> 
+
+          <Stack.Screen name="Privacy" component={Privacy}/>
+          
+          <Stack.Screen name="ManageAccount" component={ManageAccount} />
+         
+          <Stack.Screen name="FindFriends" component={FindFriends}/>
+          <Stack.Screen name="Scan" component={Scan}/>
+          <Stack.Screen name="Favorites" component={Favorites}/>
+          <Stack.Screen name="EditProfile" component={EditProfile}/>
+          <Stack.Screen name="CustomizeProfle" component={CustomizeProfle}/>
+          <Stack.Screen name="UserProfile" component={UserProfile}/>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="SignInForm" component={SignInForm}/>
+          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="SignUpForm" component={SignUpForm} />
               
            {/*  */}
            
@@ -77,34 +100,10 @@ const MainStackNavigator = () => {
            <Stack.Screen name="SimilerAcounts" component={SimilerAcounts}/>
     
            <Stack.Screen name="Profile" component={Profile}/>
-        
-
-   
-          
-       
 
            <Stack.Screen name="Splash" component={SplashScreen}/>
         
-         
 
-        
-           {/*  */}
-       
-
-
-
-
-
-
-       
-        
-    
-        
-     
-     
-    
- 
- 
       </Stack.Navigator>
     );
   }
@@ -128,7 +127,7 @@ const MainStackNavigator = () => {
     return (
       <Stack.Navigator >
         
-        <Stack.Screen name="Discover" component={Discover} />
+        <Stack.Screen name="DeepAr" component={DeepArScreen} />
       </Stack.Navigator>
     );
   }

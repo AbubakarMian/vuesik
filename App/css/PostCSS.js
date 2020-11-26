@@ -65,8 +65,8 @@ export default StyleSheet.create({
         color:'#0e5af2',
         paddingHorizontal:10,
         fontWeight:'bold',
-         marginBottom:10,
-        fontSize:12
+        //  marginBottom:10,
+        fontSize:10
       },
       MainViewCol1RowDescBtnTXT:{
         textAlign:'center',

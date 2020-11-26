@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { ColorPicker,TriangleColorPicker  } from 'react-native-color-picker'
 import styles from "../css/PostCSS";
 import Modal from 'react-native-modal';
+import { TextInput } from "react-native-gesture-handler";
 var {width,height} = Dimensions.get('window');
 
 
@@ -25,16 +26,20 @@ export default class Post extends React.Component{
                   <View style={[{},styles.MainViewCol1Row]}>
                     <View style={[{},styles.MainViewCol1RowDesc]}>
                      <View>
-                         <Text style={[{},styles.MainViewCol1RowDescTXT]}>
+                         <TextInput 
+                         multiline={true}
+                         style={[{marginTop:20},styles.MainViewCol1RowDescTXT]}>
                              Your account is public and public videos
                              will be visible to everyone.
-                         </Text>
+                         </TextInput>
                      </View>
                      <View>
-                         <Text style={[{},styles.MainViewCol1RowDescTXT]}>
+                         <TextInput 
+                         multiline={true}
+                         style={[{},styles.MainViewCol1RowDescTXT]}>
                              Your account is public and public videos
                              will be visible to everyone.
-                         </Text>
+                         </TextInput>
                          <TriangleColorPicker
                              onColorSelected={color => alert(`Color selected: ${color}`)}
                             style={{width:50,height:50,marginLeft:10,marginBottom:10,marginTop:10 }}
