@@ -20,6 +20,7 @@ export default StyleSheet.create({
     flexDirection: 'column',
     height: height,
     width: width,
+   
   },
   TopBar: {
     paddingHorizontal: 20,

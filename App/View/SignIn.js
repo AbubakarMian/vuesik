@@ -19,6 +19,7 @@ const style =StyleSheet.create({
 export default class SignIn extends React.Component{
 
     render(){
+        console.log('props !!!!!',this.props.navigation)
         return(
             <View style={{flex:1}}>
 

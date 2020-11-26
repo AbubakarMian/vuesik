@@ -25,7 +25,25 @@ export default class FindFriends extends React.Component{
     render(){
         return(
             <View style={[{},styles.center]}>
+            
              <View style={{width:'100%',paddingHorizontal:10}}>
+             <View style={{flexDirection:'row',paddingVertical:10,justifyContent:'center',alignItems:'center',position:'relative'}}>
+               <View style={{position:'absolute',left:0}}>
+                 <TouchableOpacity
+                 onPress={()=>this.props.navigation.navigate('EditProfile')}
+                 >
+                   <Image
+                   style={{height:20,width:30}}
+                   source={require('../images/icons/backarrow-36.png')}
+                   >
+
+                   </Image>
+                 </TouchableOpacity>
+               </View>
+               <View style={{alignItems:'center',width:width}}>
+                 <Text style={{fontWeight:'bold'}}>Find Friends</Text>
+               </View>
+             </View>
              <View style={{width:'100%',flexDirection:'row',paddingHorizontal:10,height:40, backgroundColor:'#e5e3e3',width:'100%',borderRadius:3,}}>
                <View style={{justifyContent:'center'}}>
                    <Image

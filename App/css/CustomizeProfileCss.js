@@ -10,12 +10,13 @@ export default StyleSheet.create({
                
     center: {
         flex: 1,
-        paddingTop:50,
+        paddingTop:30,
         alignItems: "center",
         textAlign: "center",
         backgroundColor:'#fff',
         height:height,
         width:width,
+        paddingHorizontal:10,
 
         
       },

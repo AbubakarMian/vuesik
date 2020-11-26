@@ -11,6 +11,23 @@ export default class CustomizeProfile extends React.Component{
     render(){
         return(
             <View style={[{},styles.center]}>
+             <View style={{flexDirection:'row',paddingVertical:10,justifyContent:'center',alignItems:'center',position:'relative'}}>
+               <View style={{position:'absolute',left:0}}>
+                 <TouchableOpacity
+                 onPress={()=>this.props.navigation.navigate('EditProfile')}
+                 >
+                   <Image
+                   style={{height:20,width:30}}
+                   source={require('../images/icons/backarrow-36.png')}
+                   >
+
+                   </Image>
+                 </TouchableOpacity>
+               </View>
+               <View style={{alignItems:'center',width:width}}>
+                 <Text style={{fontWeight:'bold'}}>Edit Profile</Text>
+               </View>
+             </View>
                 <View style={[{},styles.ChangeLogoRow]}>
                     <View style={[{},styles.ChangeLogoImageView]}>
                       <TouchableOpacity>
@@ -45,7 +62,7 @@ export default class CustomizeProfile extends React.Component{
                     </View>
                   
                 </View>
-              <View style={{borderBottomWidth:1,paddingVertical:30,paddingHorizontal:10}}>
+              <View style={{borderBottomWidth:1,paddingVertical:30,paddingHorizontal:10,marginHorizontal:10}}>
               <View style={[{},styles.mROW]}>
                        <View style={[{alignItems:'baseline'},styles.mROWCol1]}>
                           <Text style={[{ alignSelf:'baseline',marginTop:15}]}>Name</Text>
