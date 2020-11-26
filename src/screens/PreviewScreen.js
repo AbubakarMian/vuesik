@@ -23,7 +23,7 @@ class PreviewScreen extends React.Component {
     const path = this.props.screenshotPath
     const type = 'photo'
 
-    CameraRoll.saveToCameraRoll(path, type).then(res => {
+    CameraRoll.save(path, type).then(res => {
       this.setState({currentAssetPath: res});
       this.setState({showAlert: true});
 
