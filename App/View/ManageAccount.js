@@ -13,7 +13,9 @@ export default class ManageAccount extends React.Component{
             <View style={[{},styles.center]}>
                 <View style={[{},styles.TOpBar]}>
                     <View style={[{},styles.Label]}>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                         onPress={()=>this.props.navigation.navigate('Settings')}
+                        >
                             <View>
                             <Image
                                 style={[{},styles.TopBarIcon]}

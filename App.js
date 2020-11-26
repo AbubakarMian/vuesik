@@ -7,21 +7,25 @@
  */
 import * as React from 'react'
 import { StyleSheet, View } from 'react-native'
-import HomeScreen from './src/screens/HomeScreen'
-import PreviewScreen from './src/screens/PreviewScreen'
+import { BottomTabNavigator  } from "./App/Navigation/TabNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+// import HomeScreen from './src/screens/HomeScreen'
+// import PreviewScreen from './src/screens/PreviewScreen'
 
-import SimpleNavigator from './src/components/simplenavigator/SimpleNavigator'
+// import SimpleNavigator from './src/components/simplenavigator/SimpleNavigator'
 
-const navigatorConfig = {
-  'home': HomeScreen,
-  'preview': PreviewScreen
-}
+// const navigatorConfig = {
+//   'home': HomeScreen,
+//   'preview': PreviewScreen
+// }
 
 
 const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
-      <SimpleNavigator firstScreen={'home'} navigatorConfig={navigatorConfig}/>
+      <NavigationContainer>
+              <BottomTabNavigator/>
+      </NavigationContainer>
     </View>
   );
 };

@@ -99,11 +99,13 @@ var { width, height } = Dimensions.get('window');
               onPress={()=>this.props.navigation.navigate('CustomizeProfle')}
               >
                         <View style={{backgroundColor:'purple',paddingVertical:6,paddingHorizontal:20,borderRadius:50}}>
-                          <Text style={{color:'#fff',backgroundColor:'purple',fontSize:10}}>EditProfile</Text>
+                          <Text style={{color:'#fff',fontSize:10}}>EditProfile</Text>
                          
                         </View>
                       </TouchableOpacity>
-                      <TouchableOpacity style={{marginHorizontal:10}}>
+                      <TouchableOpacity 
+                      onPress={()=>this.props.navigation.navigate('Favorites')}
+                      style={{marginHorizontal:10}}>
                           <Image
                           source={require('../images/icons/icon-23.png')}
                           style={{ alignSelf:'center',

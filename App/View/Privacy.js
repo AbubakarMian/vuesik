@@ -6,12 +6,16 @@ import ToggleSwitch from 'toggle-switch-react-native';
 var {width, height} = Dimensions.get('window');
 
 export default class Privacy extends React.Component {
+
   render() {
+    
     return (
       <View style={[{}, styles.center]}>
         <View style={[{}, styles.TopBar]}>
           <View style={[{}, styles.TopBarIcon]}>
-            <TouchableOpacity>
+            <TouchableOpacity
+             onPress={()=>this.props.navigation.navigate('Settings')}
+            >
               <Image
                 source={require('../images/icons/backarrow-36.png')}
                 style={[{height: 20, width: 20}]}></Image>
@@ -21,7 +25,7 @@ export default class Privacy extends React.Component {
             <Text style={[{}, styles.TopBarHeadingTxt]}>Privacy</Text>
           </View>
         </View>
-        <ScrollView style={{marginHorizontal:10}}>
+        <ScrollView style={{marginHorizontal:10,}}>
           <View style={[{}, styles.Container]}>
             <View>
               <Text style={[{}, styles.Heading]}>DISCOVER</Text>
@@ -168,7 +172,7 @@ export default class Privacy extends React.Component {
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={[{}, styles.Row]}>
+            <View style={[{ paddingBottom:100}, styles.Row]}>
               <View>
                 <Text style={[{}, styles.Header]}>Stitch</Text>
               </View>

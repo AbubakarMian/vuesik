@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions,TouchableOpacity,Image,Text } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import MyViews from "../View/MyVues";
 import VideosTab from "../View/Tabs/FavoritesTabs/VideosTab";
@@ -10,7 +10,8 @@ import EffectsTab from "../View/Tabs/FavoritesTabs/EffectsTab";
 
 
 
- 
+
+var {width,height} = Dimensions.get('window');
 const initialLayout = { width: Dimensions.get('window').width };
 
 export default function TabViewExample (props) {
@@ -19,7 +20,7 @@ export default function TabViewExample (props) {
  
 
     { key: 'first', title: 'VIDEOS', navigation:props.navigation  },
-    { key: 'second', title: 'HASHTAGS'  ,navigation:props.navigation },
+    { key: 'second', title: 'HASHTA'  ,navigation:props.navigation },
     { key: 'third', title: 'SOUNDS',navigation:props.navigation},
     { key: 'fourth', title: 'EFFECTS',navigation:props.navigation},
   
@@ -37,15 +38,19 @@ export default function TabViewExample (props) {
   });
   
   return (
-  
+
+   
     <TabView
       // navigation={props.navigation} 
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={initialLayout}
+      style={{marginTop:50}}
      
     />
+
+    
   );
 }
  

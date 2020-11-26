@@ -41,7 +41,7 @@ export default StyleSheet.create({
         flexDirection:'row',
         alignSelf:'baseline',
         position:'absolute',
-        bottom:height/5
+        bottom:30
      }
 })
 
