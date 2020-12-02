@@ -10,12 +10,19 @@ export default StyleSheet.create({
                
     center: {
         flex: 1,
-        paddingTop:50,
+        paddingTop:30,
         alignItems: "center",
         textAlign: "center",
         backgroundColor:'#fff',
         flexDirection:'column',
       },
+      TopRow:{
+        flexDirection:'row',
+        // width:width,borderBottomWidth:1,
+        paddingTop:10,
+        paddingBottom:10,
+        paddingLeft:10
+    },
       displayView:{
      
         height:'40%',

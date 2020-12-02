@@ -26,6 +26,32 @@ var {width,height} = Dimensions.get('window');
       render(){
           return(
             <View style={[{},styles.center]}>
+             <View style={[{},styles.TopRow]}>
+                    <View style={{flex:1}}>
+                      <TouchableOpacity
+                      onPress={()=>this.props.navigation.navigate('MyVues')}
+                      >
+                      <Image
+                        source={require('../images/icons/backarrow-36.png')}
+                        style={{height:20,width:20}}
+                        >
+
+                        </Image>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={{position:'absolute',right:10}}>
+                        <TouchableOpacity>
+                        <Image
+                        style={{height:30,width:30}}
+                        source={require('../images/icons/icon-22.png')}
+                        >
+
+                        </Image>
+                        </TouchableOpacity>
+
+                    </View>
+                  
+                </View>
             <View style={[{},styles.displayView]}>
               <View style={{flexDirection:'row',alignSelf:'center',flex:1,alignItems:'center'}}>
                   <View style={{}}>

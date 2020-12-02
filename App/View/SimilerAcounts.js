@@ -25,6 +25,32 @@ export default class SimilerAcounts extends React.Component {
   render() {
     return (
       <View style={[{},styles.center]}>
+        <View style={[{},styles.TopRow]}>
+                    <View style={{flex:1}}>
+                      <TouchableOpacity
+                      onPress={()=>this.props.navigation.navigate('MyVues')}
+                      >
+                      <Image
+                        source={require('../images/icons/backarrow-36.png')}
+                        style={{height:20,width:20}}
+                        >
+
+                        </Image>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={{position:'absolute',right:10}}>
+                        <TouchableOpacity>
+                        <Image
+                        style={{height:30,width:30}}
+                        source={require('../images/icons/icon-22.png')}
+                        >
+
+                        </Image>
+                        </TouchableOpacity>
+
+                    </View>
+                  
+                </View>
       <View style={[{},styles.displayView]}>
         <View style={{flexDirection:'row'}}>
             <View>
@@ -52,17 +78,16 @@ export default class SimilerAcounts extends React.Component {
            
         </View>
         <View style={{flexDirection:'row',justifyContent:'center',marginRight:20}}>
-        <TouchableOpacity style={{borderWidth:8,backgroundColor:'purple',color:'#fff', borderRadius:50,paddingLeft:20,paddingRight:20,borderColor:'purple',borderLeftColor:'darkblue'}}>
-                  <View>
-                    <Text styles={{color:'#ffff',fontSize:5}}>Follow</Text>
+        <TouchableOpacity style={{borderWidth:1,backgroundColor:'purple',color:'#fff', borderRadius:50,paddingHorizontal:40,borderColor:'purple',justifyContent:'center'}}>
+                  <View style={{alignSelf:'center'}}>
+                    <Text style={{color:'#ffff',fontSize:10}}>Follow</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
-                    <Image
-                    source={require('../images/icons/icon-51.png')}
+                <TouchableOpacity style={{marginLeft:5,}}>
+                    <Image 
+                    source={require('../images/icons/downaerow-25.png')}
                     style={{ 
-                        height:2,width:2,backgroundColor:'darkblue',borderRadius:50,
-                        paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                        height:40,width:40,}}></Image>
                 </TouchableOpacity>
         
         </View>  
@@ -72,26 +97,23 @@ export default class SimilerAcounts extends React.Component {
 
         
         <View style={{flexDirection:'row',justifyContent:'center',marginTop:10,marginBottom:10,marginRight:20}}>
-        <TouchableOpacity style={{borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+        <TouchableOpacity style={{marginLeft:5,}}>
                     <Image 
-                    source={require('../images/icons/facebook.png')}
+                    source={require('../images/icons/facebook-24.png')}
                     style={{ 
-                        height:5,width:5,backgroundColor:'darkblue',borderRadius:50,
-                        paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                        height:40,width:40,}}></Image>
                 </TouchableOpacity>
-                <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+                <TouchableOpacity style={{marginLeft:5,}}>
                     <Image 
-                    source={require('../images/icons/icon-51.png')}
+                    source={require('../images/icons/instegram-23.png')}
                     style={{ 
-                        height:5,width:5,backgroundColor:'darkblue',borderRadius:50,
-                        paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                        height:40,width:40,}}></Image>
                 </TouchableOpacity>
-                <TouchableOpacity style={{marginLeft:5,borderWidth:8,borderRadius:50,borderColor:'darkblue',borderLeftColor:'darkblue'}}>
+                <TouchableOpacity style={{marginLeft:5,}}>
                     <Image 
-                    source={require('../images/icons/twitter.png')}
+                    source={require('../images/icons/twitter-22.png')}
                     style={{ 
-                        height:5,width:5,backgroundColor:'darkblue',borderRadius:50,
-                        paddingRight:10,paddingLeft:10,paddingTop:10,paddingBottom:10}}></Image>
+                        height:40,width:40,}}></Image>
                 </TouchableOpacity>
         </View>    
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>

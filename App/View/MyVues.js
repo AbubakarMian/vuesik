@@ -17,7 +17,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from '../css/MyVuesCss';
 import VidioActionstyles from '../css/VidioActionModalCSS';
 import Modal from 'react-native-modal';
-import {ScrollView} from 'react-native-gesture-handler';
+import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import * as Progress from 'react-native-progress';
 import ProgressCircle from 'react-native-progress-circle';
 import {TouchableItem} from 'react-native-tab-view';
@@ -140,7 +140,7 @@ export default class MyVues extends React.Component {
                   <View>
                     <TouchableOpacity
                       onPress={() =>
-                        this.props.navigation.navigate('UserProfile')
+                        this.props.navigation.navigate('SimilerAcounts')
                       }>
                       <View>
                         <Image
@@ -187,7 +187,7 @@ export default class MyVues extends React.Component {
                 <View style={{position: 'absolute', bottom: 50,right:130 }}>
                   <View>
                     <TouchableOpacity
-                   
+                    // onPress={this.props.navigation.navigate('UserProfile')}
                     >
                       <View>
                         <Image
@@ -206,129 +206,127 @@ export default class MyVues extends React.Component {
             onBackButtonPress={() => this.setState({vidioActionModal: false})}
 
             style={{
-              height: height/2,
-              width: width/2,
-              justifyContent: 'center',
-              justifyContent: 'center',
-              alignItems:'center'
+              
             }}>
-             <View style={{marginLeft:'50%'}}>
+             <View style={{}}>
              <LinearGradient
                 start={{x: 0.2, y: 0.25}}
                 end={{x: 0.8, y: 1.0}}
                 colors={['#2e3192', '#800080', '#93278f']}
                 style={{
-                  marginLeft: 10,
+                  opacity:0.5,
+                  alignSelf:'center',
                   padding: 10,
                   borderRadius: 5,
-                  height: 180,
+                  height: width/2,
                   width: width/2,
                 
                 }}>
-                    <View style={{justifyContent:'center',}}>
+                 <View style={{alignSelf:'center'}}>
             
-                    <TouchableOpacity
-                   onPress={() =>this.setState({vidioActionModal:false,SavingModal:true}) }
-                    >
-               <View style={{flexDirection:'row',borderBottomColor:'#fff',borderBottomWidth:1,paddingTop:2}}>
-                  <View style={{marginBottom:5}}>
-                  <Image
-                     style={{height: 30, width: 30, borderRadius: 50}}
-                     source={require('../images/icons/save-22.png')}>
-
-                  </Image>
-                  </View>
-                  <View>
-                  <Text
-                       style={{
-                         color: '#fff',
-                         textAlignVertical: 'center',
-                         fontSize: 12,
-                         marginTop: 5,
-                         marginLeft:5
-                       }}>
-                       Save Vidio
-                     </Text>
-                  </View>
-               </View>
-            </TouchableOpacity>
             <TouchableOpacity
-             onPress={() =>this.setState({vidioActionModal:false,LikeModal:true}) }
+           onPress={() =>this.setState({vidioActionModal:false,SavingModal:true}) }
             >
-               <View style={{flexDirection:'row',borderBottomColor:'#fff',borderBottomWidth:1,paddingTop:2}}>
-                  <View style={{marginBottom:5}}>
-                  <Image
-                     style={{height: 30, width: 30, borderRadius: 50}}
-                     source={require('../images/icons/favorites-23.png')}>
+       <View style={{flexDirection:'row',borderBottomColor:'#fff',borderBottomWidth:1,paddingTop:2}}>
+          <View style={{marginBottom:5}}>
+          <Image
+             style={{height: 30, width: 30, borderRadius: 50}}
+             source={require('../images/icons/save-22.png')}>
 
-                  </Image>
-                  </View>
-                  <View>
-                  <Text
-                       style={{
-                         color: '#fff',
-                         textAlignVertical: 'center',
-                         fontSize: 12,
-                         marginTop: 5,
-                         marginLeft:5
-                       }}>
-                       Add To Favorites
-                     </Text>
-                  </View>
-               </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-            onPress={() =>this.setState({vidioActionModal:false,SameVideosModal:true}) }
-            >
-               <View style={{flexDirection:'row',borderBottomColor:'#fff',borderBottomWidth:1,paddingTop:2}}>
-                  <View style={{marginBottom:5}}>
-                  <Image
-                     style={{height: 30, width: 30, borderRadius: 50}}
-                     source={require('../images/icons/notInterested-24.png')}>
+          </Image>
+          </View>
+          <View>
+          <Text
+               style={{
+                 color: '#fff',
+                 textAlignVertical: 'center',
+                 fontSize: 12,
+                 marginTop: 5,
+                 marginLeft:5
+               }}>
+               Save Vidio
+             </Text>
+          </View>
+       </View>
+    </TouchableOpacity>
+    <TouchableOpacity
+     onPress={() =>this.setState({vidioActionModal:false,LikeModal:true}) }
+    >
+       <View style={{flexDirection:'row',borderBottomColor:'#fff',borderBottomWidth:1,paddingTop:2}}>
+          <View style={{marginBottom:5}}>
+          <Image
+             style={{height: 30, width: 30, borderRadius: 50}}
+             source={require('../images/icons/favorites-23.png')}>
 
-                  </Image>
-                  </View>
-                  <View>
-                  <Text
-                       style={{
-                         color: '#fff',
-                         textAlignVertical: 'center',
-                         fontSize: 12,
-                         marginTop: 5,
-                         marginLeft:5
-                       }}>
-                       Not Interested
-                     </Text>
-                  </View>
-               </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-             onPress={() =>this.setState({vidioActionModal:false,VidioReportModal:true}) }
-            >
-               <View style={{flexDirection:'row',}}>
-                  <View style={{marginBottom:10}}>
-                  <Image
-                     style={{height: 30, width: 30, borderRadius: 50}}
-                     source={require('../images/icons/report-25.png')}>
+          </Image>
+          </View>
+          <View>
+          <Text
+               style={{
+                 color: '#fff',
+                 textAlignVertical: 'center',
+                 fontSize: 12,
+                 marginTop: 5,
+                 marginLeft:5
+               }}>
+               Add To Favorites
+             </Text>
+          </View>
+       </View>
+    </TouchableOpacity>
+    <TouchableOpacity
+    onPress={() =>this.setState({vidioActionModal:false,SameVideosModal:true}) }
+    >
+       <View style={{flexDirection:'row',borderBottomColor:'#fff',borderBottomWidth:1,paddingTop:2}}>
+          <View style={{marginBottom:5}}>
+          <Image
+             style={{height: 30, width: 30, borderRadius: 50}}
+             source={require('../images/icons/notInterested-24.png')}>
 
-                  </Image>
-                  </View>
-                  <View>
-                  <Text
-                       style={{
-                         color: '#fff',
-                         textAlignVertical: 'center',
-                         fontSize: 12,
-                         marginTop: 5,
-                         marginLeft:5
-                       }}>
-                       Report
-                     </Text>
-                  </View>
-               </View>
-            </TouchableOpacity>
-           
-         </View>
+          </Image>
+          </View>
+          <View>
+          <Text
+               style={{
+                 color: '#fff',
+                 textAlignVertical: 'center',
+                 fontSize: 12,
+                 marginTop: 5,
+                 marginLeft:5
+               }}>
+               Not Interested
+             </Text>
+          </View>
+       </View>
+    </TouchableOpacity>
+    <TouchableOpacity
+     onPress={() =>this.setState({vidioActionModal:false,VidioReportModal:true}) }
+    >
+       <View style={{flexDirection:'row',}}>
+          <View style={{marginBottom:10}}>
+          <Image
+             style={{height: 30, width: 30, borderRadius: 50}}
+             source={require('../images/icons/report-25.png')}>
+
+          </Image>
+          </View>
+          <View>
+          <Text
+               style={{
+                 color: '#fff',
+                 textAlignVertical: 'center',
+                 fontSize: 12,
+                 marginTop: 5,
+                 marginLeft:5
+               }}>
+               Report
+             </Text>
+          </View>
+       </View>
+    </TouchableOpacity>
+   
+ </View>
+                   
                 </LinearGradient>
            </View>
          </Modal>
@@ -336,39 +334,200 @@ export default class MyVues extends React.Component {
           {/* showModal */}
           <Modal
             isVisible={this.state.showModal}
-            onBackdropPress={() => this.setState({showModal: false})}
-            style={{
-              height: height,
-              width: width,
-              justifyContent: 'center',
-              justifyContent: 'center',
-            }}>
-            <View
-              style={{
-                width: width,
-                height: height / 2,
-                backgroundColor: '#fff',
-              }}>
+            // onBackdropPress={() => this.setState({showModal: false})}
+           >
+        
               <LinearGradient
                 start={{x: 0.2, y: 0.25}}
                 end={{x: 0.7, y: 1.0}}
                 colors={['#2e3192', '#800080', '#93278f']}
-                style={{height: height, width: width}}>
-                <View>
-                  <View style={{flexDirection: 'row'}}>
-                    <View
-                      style={{alignSelf: 'center', justifyContent: 'flex-end'}}>
-                      <Text style={{color: '#fff'}}>350 comments</Text>
+                style={{width:width,height:height/2+100,alignSelf:'center',position:'absolute',bottom:-20,borderRadius:15,opacity:0.5}}>
+                <View style={{width:width,height:height,flexDirection:'column',paddingVertical:10,position:'relative'}}>
+                  <View>
+                    <View style={{flexDirection:'row',position:'relative',justifyContent:'center'}}>
+                       <View>
+                         <Text style={{color:'#fff'}}>350 comments</Text>
+                       </View>
+                       <View style={{position:'absolute',right:10}}>
+                       <TouchableOpacity
+                       onPress={()=>this.setState({showModal: false})}
+                       >
+                         <Image
+                         style={{height:20,width:20}}
+                         source={require('../images/icons/close-17.png')}
+                         >
+
+                         </Image>
+                       </TouchableOpacity>
+                       </View>
                     </View>
-                    <View style={{alignSelf: 'center'}}>
-                      <Text style={{color: '#fff', justifyContent: 'flex-end'}}>
-                        x
-                      </Text>
-                    </View>
+                    
                   </View>
+                  <View style={{flexDirection:'row',marginTop:20,paddingHorizontal:10,position:'relative'}}>
+                      <View style={{marginHorizontal:10}}>
+                        <TouchableOpacity>
+                          <Image
+                          style={{height:40,width:40}}
+                          source={require('../images/icons/icon-30a.png')}
+                          >
+
+                          </Image>
+                        </TouchableOpacity>
+                      </View>
+                      <View style={{flexDirection:'column'}}>
+                         <View>
+                           <Text style={{color:'#fff',fontSize:12}}>
+                             75wiki
+                           </Text>
+                         </View> 
+                         <View>
+                           <Text style={{color:'#fff',fontSize:12}}>
+                             this song never get board of chilling me.
+                           </Text>
+                         </View> 
+                         <View>
+                           <Text style={{color:'#fff',fontSize:12}}>
+                             Love from Maldives
+                           </Text>
+                         </View>
+                         <View style={{marginTop:10}}>
+                           <TouchableOpacity>
+                             <View style={{flexDirection:'row'}}>
+                              <View>
+                                <Text style={{color:'#fff'}}>View replies</Text>
+                              </View>
+                              <View>
+                              
+                                  <Image
+                                  style={{height:15,width:15,marginLeft:10}}
+                                  source={require('../images/icons/arrow-22.png')}
+                                  >
+
+                                
+                                </Image>
+                              </View>
+                             </View>
+                           </TouchableOpacity>
+                         </View> 
+                      </View>
+                      
+                      <View style={{position:'absolute',right:10}}>
+                        <TouchableOpacity>
+                          <Image
+                          style={{height:20,width:20}} 
+                          source={require('../images/icons/heart-29.png')}
+                          >
+
+                          </Image>
+                          <Text style={{color:'#fff',fontWeight:'bold',fontSize:10}}>
+                           187  
+                          </Text>
+                        </TouchableOpacity>
+                      </View>
+                  </View>
+                  <View style={{flexDirection:'row',marginTop:20,paddingHorizontal:10,position:'relative'}}>
+                      <View style={{marginHorizontal:10}}>
+                        <TouchableOpacity>
+                          <Image
+                          style={{height:40,width:40}}
+                          source={require('../images/icons/icon-30a.png')}
+                          >
+
+                          </Image>
+                        </TouchableOpacity>
+                      </View>
+                      <View style={{flexDirection:'column'}}>
+                         <View>
+                           <Text style={{color:'#fff',fontSize:12}}>
+                             75wiki
+                           </Text>
+                         </View> 
+                         <View>
+                           <Text style={{color:'#fff',fontSize:12}}>
+                             this song never get board of chilling me.
+                           </Text>
+                         </View> 
+                         <View>
+                           <Text style={{color:'#fff',fontSize:12}}>
+                             Love from Maldives
+                           </Text>
+                         </View>
+                         <View style={{marginTop:10}}>
+                           <TouchableOpacity>
+                             <View style={{flexDirection:'row'}}>
+                              <View>
+                                <Text style={{color:'#fff'}}>View replies</Text>
+                              </View>
+                              <View>
+                              
+                                  <Image
+                                  style={{height:15,width:15,marginLeft:10}}
+                                  source={require('../images/icons/arrow-22.png')}
+                                  >
+
+                                
+                                </Image>
+                              </View>
+                             </View>
+                           </TouchableOpacity>
+                         </View> 
+                      </View>
+                      
+                      <View style={{position:'absolute',right:10}}>
+                        <TouchableOpacity>
+                          <Image
+                          style={{height:20,width:20}} 
+                          source={require('../images/icons/heart-29.png')}
+                          >
+
+                          </Image>
+                          <Text style={{color:'#fff',fontWeight:'bold',fontSize:10}}>
+                           187  
+                          </Text>
+                        </TouchableOpacity>
+                      </View>
+                  </View>
+                  <View style={{position:'absolute',top:height/2+50, alignSelf:'baseline',width:width, borderTopWidth:1,borderTopColor:'#fff',paddingHorizontal:20,paddingVertical:5}}>
+                       <View style={{marginBottom:50}}>
+                         <TextInput
+                         style={{color:'#fff',}}
+                         
+                         >
+                           Add Comments..
+                         </TextInput>
+                       </View>
+                       <View style={{position:'absolute',right:20,flexDirection:'row',marginTop:10,}}>
+                         <View style={{marginRight:10}}>
+                           <TouchableOpacity
+                           onPress={()=>this.setState({showModal:false})}
+                           >
+                           <Image
+                           style={{height:30,width:30}}
+                           source={require('../images/icons/icon-32a.png')}
+                           >
+
+                           </Image>
+                           </TouchableOpacity>
+
+                         </View> 
+                         <View>
+                         <TouchableOpacity
+                          //  onPress={()=>this.setState({showModal:false})}
+                           >
+                           <Image
+                           style={{height:30,width:30}}
+                           source={require('../images/icons/icon-31a.png')}
+                           >
+
+                           </Image>
+                           </TouchableOpacity>
+                         </View> 
+                       </View>
+                       
+                    </View>
                 </View>
               </LinearGradient>
-            </View>
+            
           </Modal>
 
 
@@ -440,7 +599,7 @@ export default class MyVues extends React.Component {
                      <LinearGradient 
                                 start={{ x: 0.2, y: 0.25 }} end={{ x: 0.8, y: 1.0 }}
                                 colors={['#2e3192','#800080', '#93278f']}
-                                style={{ opacity: 0.5, borderRadius: 5 ,paddingHorizontal:30,height:120}}>
+                                style={{ opacity: 0.5, borderRadius: 5 ,paddingHorizontal:30,height:120,opacity:0.5,}}>
                   <View style={[{},VidioActionstyles.center]}>
                      
                    
@@ -483,7 +642,7 @@ export default class MyVues extends React.Component {
                      <LinearGradient 
                                 start={{ x: 0.2, y: 0.25 }} end={{ x: 0.8, y: 1.0 }}
                                 colors={['#2e3192','#800080', '#93278f']}
-                                style={{ opacity: 0.5, borderRadius: 5 ,paddingHorizontal:30,height:120}}>
+                                style={{ opacity: 0.5, borderRadius: 5 ,paddingHorizontal:30,height:120,opacity:0.5,}}>
                   <View style={[{},VidioActionstyles.center]}>
                      
                    
@@ -527,7 +686,7 @@ export default class MyVues extends React.Component {
                      <LinearGradient 
                                 start={{ x: 0.2, y: 0.25 }} end={{ x: 0.8, y: 1.0 }}
                                 colors={['#2e3192','#800080', '#93278f']}
-                                style={{ opacity: 0.5, borderRadius: 5 ,paddingHorizontal:30,height:120}}>
+                                style={{ opacity: 0.5, borderRadius: 5 ,paddingHorizontal:30,height:120,opacity:0.5,}}>
                   <View style={[{},VidioActionstyles.center]}>
                      
                    

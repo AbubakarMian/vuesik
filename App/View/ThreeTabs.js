@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 import MyViews from "../View/MyVues";
 import GridTab from "../View/Tabs/EditProfile/GridTab";
 import FavoritesTab from "../View/Tabs/EditProfile/FavoritesTab";
@@ -22,21 +22,41 @@ export default function TabViewExample (props) {
     { key: 'second', title: 'Favorites'  ,navigation:props.navigation },
     { key: 'third', title: 'Private'  ,navigation:props.navigation },
   ]);
-  const navigation=props.navigation
+
   const renderScene = SceneMap({
     first: GridTab,
     second: FavoritesTab,
     third: BlockTab,
     
   });
+  const navigation=props.navigation
+    const renderTabBar = props => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: 'purple' }} 
+      activeColor={'purple'}
+      inactiveColor={'darkblue'}
+      style={{ backgroundColor: '#fff',}}
+      labelStyle={{
+        
+        fontSize:8,
+        fontWeight:'bold',
+      
+      }}/>
+      );
+     
+      
+      
+    
   
-  return (
+  return(
     <TabView
       // navigation={props.navigation} 
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={initialLayout}
+      renderTabBar={renderTabBar}
     />
   );
 }

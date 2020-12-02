@@ -15,9 +15,16 @@ export default StyleSheet.create({
         textAlign: "center",
         backgroundColor:'#fff'
       },
+      TopRow:{
+        flexDirection:'row',
+        // width:width,borderBottomWidth:1,
+        paddingTop:10,
+        paddingBottom:10,
+        paddingLeft:10
+    },
       displayView:{
      
-        flex:3,
+        flex:1.5,
         width:width,
         borderBottomWidth:1
       },

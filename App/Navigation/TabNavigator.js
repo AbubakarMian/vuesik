@@ -15,17 +15,16 @@ const BottomTabNavigator = () => {
   return (
     
        <Tab.Navigator
-             
+          
        tabBarOptions={{
-       
-       
+        
         labelStyle: { textTransform: "none",fontSize:10,backgroundColor:'#000'  },
         activeBackgroundColor:'#000',
         inactiveBackgroundColor:'#000',
-        activeTintColor:'#fff', 
-           
-
+        activeTintColor:'#fff',
+   
     }}
+    
     
        >
       <Tab.Screen name="Home" component={MainStackNavigator} />
