@@ -44,6 +44,14 @@ import FreeUpSpace from "../View/FreeUpSpace";
 import DataSaver from "../View/DataSaver";
 import HelpFaqs from "../View/Hel&Faqs";
 import TermsOfUse from "../View/TermsOfUse";
+import TopUser from "../View/TopUser";
+import { Header } from "react-native/Libraries/NewAppScreen";
+import { BottomTabBar } from "@react-navigation/bottom-tabs";
+// import DiscoverTabs from "../View/Tabs/DiscoverTabs/DiscoverMain";
+import Likes from "../View/Likes";
+import Comments from "../View/Comments";
+import Mentions from "../View/Mentions";
+import Follow from "../View/Follow";
 const Stack = createStackNavigator();
 
 const MainStackNavigator = () => {
@@ -62,6 +70,14 @@ const MainStackNavigator = () => {
         }}
 
       >
+      <Stack.Screen name="SignIn" component={SignIn}/> 
+         <Stack.Screen name="Likes" component={Likes}/>   
+        <Stack.Screen name="Follow" component={Follow}/>
+        <Stack.Screen name="Mention" component={Mentions}/>
+        <Stack.Screen name="Comments" component={Comments}/>
+           
+        <Stack.Screen name="Discover" component={Discover}/>
+        <Stack.Screen name="TopUser" component={TopUser}/> 
         <Stack.Screen name="Settings" component={Settings}/>
         <Stack.Screen name="TermsOfUse" component={TermsOfUse}/>
         <Stack.Screen name="HelpFaqs" component={HelpFaqs}/>
@@ -72,8 +88,8 @@ const MainStackNavigator = () => {
         <Stack.Screen name="PushNotification" component={PushNotification}/>
           <Stack.Screen name="MyQrCode" component={MyQrCode}/>
           <Stack.Screen name="Payout" component={Payout}/>
-           <Stack.Screen name="SignIn" component={SignIn}/> 
-
+       
+          
           <Stack.Screen name="Privacy" component={Privacy}/>
           
           <Stack.Screen name="ManageAccount" component={ManageAccount} />
@@ -119,7 +135,7 @@ const MainStackNavigator = () => {
     return (
       <Stack.Navigator >
         
-        <Stack.Screen name="Inbox" component={Inbox} />
+        <Stack.Screen name="Inbox" component={Inbox} options={{headerShown:false}} />
       </Stack.Navigator>
     );
   }
@@ -127,10 +143,11 @@ const MainStackNavigator = () => {
     return (
       <Stack.Navigator >
         
-        <Stack.Screen name="DeepAr" component={DeepArScreen} />
+        <Stack.Screen name="DeepAr" component={Discover} options={{headerShown:false}} />
       </Stack.Navigator>
     );
   }
+  
   const CameraStackNavigator = () => {
     return (
       <Stack.Navigator >

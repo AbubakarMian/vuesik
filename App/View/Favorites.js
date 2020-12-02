@@ -20,7 +20,7 @@ export default function TabViewExample (props) {
  
 
     { key: 'first', title: 'VIDEOS', navigation:props.navigation  },
-    { key: 'second', title: 'HASHTA'  ,navigation:props.navigation },
+    { key: 'second', title: 'HASHTAGS'  ,navigation:props.navigation },
     { key: 'third', title: 'SOUNDS',navigation:props.navigation},
     { key: 'fourth', title: 'EFFECTS',navigation:props.navigation},
   
@@ -36,19 +36,40 @@ export default function TabViewExample (props) {
     third: SoundsTab,
     fourth: EffectsTab,
   });
-  
+  const renderTabBar = props => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: 'purple' }} 
+      activeColor={'purple'}
+      inactiveColor={'darkblue'}
+      style={{ backgroundColor: '#fff',}}
+      labelStyle={{
+        color:'darkblue',
+        fontSize:8,
+        fontWeight:'bold',
+      
+      }}
+    
+     
+      
+      
+    />
+  );
   return (
 
-   
-    <TabView
+  
+    <View style={{flex:1}}>
+      <TabView
       // navigation={props.navigation} 
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={initialLayout}
       style={{marginTop:50}}
+      renderTabBar={renderTabBar}
      
     />
+    </View>
 
     
   );

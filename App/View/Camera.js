@@ -97,7 +97,7 @@ export default class PhotoEffect extends React.Component{
                       </View>                              
                    </View>
                    <View
-                   style={[{alignSelf:'baseline'},styles.BottomBar]}>
+                   style={[{alignSelf:'baseline',marginBottom:100},styles.BottomBar]}>
                       <View style={[{},styles.BottomBarImageViw]}>
                           <TouchableOpacity
       

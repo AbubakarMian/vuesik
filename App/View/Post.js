@@ -1,12 +1,12 @@
 import React from "react";
-import {View,Text, Dimensions, StyleSheet,Grid,Row,Col,TouchableOpacity, Image} from "react-native";
+import {View,Text, Dimensions, StyleSheet,Grid,Row,Col,TouchableOpacity, Image,ScrollView} from "react-native";
 // import { TouchableOpacity } from "react-native-gesture-handler";
 import ToggleSwitch from 'toggle-switch-react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { ColorPicker,TriangleColorPicker  } from 'react-native-color-picker'
 import styles from "../css/PostCSS";
 import Modal from 'react-native-modal';
-import { TextInput } from "react-native-gesture-handler";
+import {  TextInput } from "react-native-gesture-handler";
 var {width,height} = Dimensions.get('window');
 
 
@@ -21,7 +21,24 @@ export default class Post extends React.Component{
     render(){
         return(
             <View style={[{},styles.center]}>
-                <View style={[{},styles.MainView]}>
+             <View style={{flexDirection:'row',width:width,paddingHorizontal:20,borderBottomWidth:1,paddingBottom:20}}>
+                    <View style={{flex:1}}>
+                        <TouchableOpacity
+                        onPress={()=>this.props.navigation.navigate('VideoComplete')}
+                        >
+                        <Image
+                        style={{width:30,height:20}}
+                        source={require('../images/icons/backarrow-36.png')}
+                        >
+
+                        </Image>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{flex:2}}>
+                        <Text style={{fontWeight:'bold',fontSize:15}}>Free Up Space</Text>
+                    </View>
+                </View>
+                <ScrollView style={[{},styles.MainView]}>
                 <View style={[{},styles.MainViewCol1]}>
                   <View style={[{},styles.MainViewCol1Row]}>
                     <View style={[{},styles.MainViewCol1RowDesc]}>
@@ -302,7 +319,7 @@ export default class Post extends React.Component{
      
                 </View>
 
-                </View>
+                </ScrollView>
 
                  {/* Post Modal  */}
           <Modal
