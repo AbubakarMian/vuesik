@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
       alignItems: "center",
       textAlign: "center",
       backgroundColor: "#fff",
+      height:height,
     },
   });
 
@@ -30,8 +31,40 @@ const styles = StyleSheet.create({
 
       render(){
           return(
+            <View style={{height:height,width:width}}>
+             <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1,marginTop:10}}>
+             <View style={{flex:1, alignSelf:'flex-start'}}>
+               <TouchableOpacity
+                onPress={()=>this.props.navigation.navigate('FindFriends')}
+               >
+                <Image
+                source={require('../images/icons/backarrow-36.png')}
+                style={{height:30,width:30}}
+                >
+
+                </Image>
+               </TouchableOpacity>
+             </View>
+             <View style={{flex:4, justifyContent:'center',alignSelf:'center'}}>
+               <Text style={{textAlign:'center',alignSelf:'center',fontWeight:'bold'}}>Sign Up</Text>
+             </View>
+             
+             <View style={{flex:1,justifyContent:'flex-end',alignItems:'flex-end'}}>
+             <TouchableOpacity
+                // onPress={()=>this.props.navigation.navigate('Settings')}
+               >
+                {/* <Image
+                source={require('../images/icons/settings-23.png')}
+                style={{height:30,width:5,marginRight:10}}
+                >
+
+                </Image> */}
+               </TouchableOpacity>
+            </View>
+            </View>  
             <View style={[{backgroundColor:'#fff'},styles.center]}
             >
+           
               
                 
                     <View style={{ flexDirection:"row",marginHorizontal:20 }}>
@@ -171,6 +204,7 @@ const styles = StyleSheet.create({
                     </Modal>
             
         </View> 
+        </View>
           );
       }
   }

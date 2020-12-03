@@ -19,7 +19,7 @@ export default class TopTab extends React.Component{
                  <View>
                      <TouchableOpacity>
                      <Image
-                     source={require('../../../images/icons/image-15.png')}
+                     source={require('../../../images/icons/image-32.jpg')}
                      style={{height:width/3,width:width/4,marginRight:2}}
                      >
 
@@ -29,7 +29,7 @@ export default class TopTab extends React.Component{
                  <View>
                  <TouchableOpacity>
                      <Image
-                     source={require('../../../images/icons/image-15.jpg')}
+                     source={require('../../../images/icons/image-32.jpg')}
                      style={{height:width/3,width:width/4,marginRight:2}}
                      >
 
@@ -38,8 +38,8 @@ export default class TopTab extends React.Component{
                  </View>
                  <View>
                  <TouchableOpacity>
-                     <Image
-                     source={require('../../../images/icons/image-16.jpg')}
+                 <Image
+                     source={require('../../../images/icons/image-32.jpg')}
                      style={{height:width/3,width:width/4,marginRight:2}}
                      >
 

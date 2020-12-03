@@ -53,7 +53,7 @@ export default function Follow (props) {
   );
   return (
     <View style={{flex:1}}>
-      <View style={[{},Tabstyles.TopBarRow]}>
+      {/* <View style={[{},Tabstyles.TopBarRow]}>
                   <View style={[{},Tabstyles.TopBarRowIconView]}>
                     <TouchableOpacity>
                       <Image
@@ -89,7 +89,7 @@ export default function Follow (props) {
                       <Text style={[{},Tabstyles.TopBarRowSearchText]}>Search</Text>
                     </TouchableOpacity>
                   </View>
-                </View>
+                </View> */}
       <TabView
       // navigation={props.navigation} 
       navigationState={{ index, routes }}

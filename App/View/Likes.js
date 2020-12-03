@@ -40,14 +40,11 @@ export default function DiscoverTabs (props) {
       }}
     activeColor='purple'
     inactiveColor='darkblue'
-     
-      
-      
     />
   );
-  console.log('props !!!!!!!!!!', this)
   return (
     <View style={{flex:1}}>
+   
       <View style={[{},Tabstyles.TopBarRow]}>
                   <View style={[{},Tabstyles.TopBarRowIconView]}>
                     <TouchableOpacity>

@@ -73,7 +73,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name="SignIn" component={SignIn}/> 
          <Stack.Screen name="Likes" component={Likes}/>   
         <Stack.Screen name="Follow" component={Follow}/>
-        <Stack.Screen name="Mention" component={Mentions}/>
+        <Stack.Screen name="Mentions" component={Mentions}/>
         <Stack.Screen name="Comments" component={Comments}/>
            
         <Stack.Screen name="Discover" component={Discover}/>

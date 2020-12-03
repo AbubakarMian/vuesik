@@ -2,6 +2,7 @@ import React from "react";
 import {View,Text, Dimensions,StyleSheet,Image,ScrollView} from "react-native";
 import {  TouchableOpacity } from "react-native-gesture-handler";
 import styles from "../../../css/TabsCSS/CommentsTabsCSS/CommentsTabCss";
+import InboxDropdown from "../../components/InboxDropdown";
 
 var {width,hight} = Dimensions.get('window');
 
@@ -9,8 +10,11 @@ var {width,hight} = Dimensions.get('window');
 export default class CommentsTab extends React.Component{
 
     render(){
+
         return(
+            
             <View style={[{},styles.center]}>
+            <InboxDropdown props={this.props}/>
               <ScrollView style={[{},styles.Container]}>
                  <View style={[{},styles.Row]}>
                   <View style={[{},styles.RoundImageView]}>

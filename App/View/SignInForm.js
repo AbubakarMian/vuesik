@@ -6,7 +6,7 @@ import {
   Platform,Alert, View, Button, Text,TextInput,Image, StyleSheet, TouchableOpacity } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
 import { State } from "react-native-gesture-handler";
-
+var { width, height } = Dimensions.get('window');
 
 
 var { width, height } = Dimensions.get('window');
@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    height:height,
+    width:width,
   },
 });
 
@@ -35,8 +37,40 @@ export default class SignInForm extends React.Component{
 
   render(){
     return(
-      <View style={[{backgroundColor:'#fff'}, styles.center ] }>
-      <Modal
+      <View style={{height:height}}>
+        <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1,marginTop:10}}>
+             <View style={{flex:1, alignSelf:'flex-start'}}>
+               <TouchableOpacity
+                onPress={()=>this.props.navigation.navigate('FindFriends')}
+               >
+                <Image
+                source={require('../images/icons/backarrow-36.png')}
+                style={{height:30,width:30}}
+                >
+
+                </Image>
+               </TouchableOpacity>
+             </View>
+             <View style={{flex:4, justifyContent:'center',alignSelf:'center'}}>
+               <Text style={{textAlign:'center',alignSelf:'center',fontWeight:'bold'}}>Log In</Text>
+             </View>
+             
+             <View style={{flex:1,justifyContent:'flex-end',alignItems:'flex-end'}}>
+             <TouchableOpacity
+                // onPress={()=>this.props.navigation.navigate('Settings')}
+               >
+                {/* <Image
+                source={require('../images/icons/settings-23.png')}
+                style={{height:30,width:5,marginRight:10}}
+                >
+
+                </Image> */}
+               </TouchableOpacity>
+            </View>
+            </View>
+      <View style={[{backgroundColor:'#fff',height:height,width:width}, styles.center ] }>
+      
+      {/* <Modal
        isVisible={this.state.showModal}
       style={{height:100,width:width-100,justifyContent:'center',
       alignSelf:'center'}}>
@@ -44,7 +78,7 @@ export default class SignInForm extends React.Component{
       alignItems:'center' }}>
         <Text>I am the modal content!</Text>
       </View> 
-    </Modal>
+    </Modal> */}
      <View style={{ flexDirection:"row",marginHorizontal:20,marginTop:10 }}>
           <TextInput
            style={{ flex:1, height:40,borderColor:'gray', borderWidth:1, borderRadius:5,backgroundColor:'#fff'}}
@@ -104,6 +138,7 @@ export default class SignInForm extends React.Component{
                   
               </LinearGradient>
           </View>
+</View>
 </View> 
     );
   }
