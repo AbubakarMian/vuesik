@@ -173,7 +173,7 @@ export default class TopUser extends React.Component {
                 <TouchableOpacity>
                 <Image
                   style={{height:'100%',width:'100%'}}
-                  source={require('../images/icons/profile-24.jpg')}
+                  source={require('../images/icons/image-24.jpg')}
                   >
 
                   </Image>

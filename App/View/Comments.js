@@ -4,7 +4,7 @@ import SearchInput, { createFilter } from 'react-native-search-filter';
 import Tabstyles from "../css/DiscoverCss";
 import { TabView, SceneMap,TabBar } from 'react-native-tab-view';
 import CommentsTab from "../View/Tabs/CommentsTabs/CommentTab";
-
+import InboxDropdown from "../View/components/InboxDropdown";
 import { color } from 'react-native-reanimated';
 
 
@@ -41,8 +41,12 @@ export default function Comments (props) {
       
     />
   );
+
   return (
+
     <View style={{flex:1}}>
+    {/* <InboxDropdown  heading="Comments" props={this.props} /> */}
+
       <View style={[{},Tabstyles.TopBarRow]}>
                   <View style={[{},Tabstyles.TopBarRowIconView]}>
                     <TouchableOpacity>
@@ -80,6 +84,7 @@ export default function Comments (props) {
                     </TouchableOpacity>
                   </View>
                 </View>
+                
       <TabView
       // navigation={props.navigation} 
       navigationState={{ index, routes }}

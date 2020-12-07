@@ -13,9 +13,15 @@ export default class Settings extends React.Component{
     constructor(props){
         super(props)
         this.state={
-          logoutModal:false
+          logoutModal:false,
+          tabBarVisible:false
         }
       }
+      componentWillMount(){
+        this.props.navigation.dangerouslyGetParent().setOptions({
+          tabBarVisible: this.state.tabBarVisible
+        });
+          }
     render(){
         return(
             <View style={[{},styles.center]}>

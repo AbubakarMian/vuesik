@@ -58,7 +58,7 @@ var {width,height} = Dimensions.get('window');
                       <Image
                       style={{height:100,width:80,flexDirection:'row',alignSelf:'center',alignItems:'center'}}
       
-                      source={require('../images/icons/profile-24.png')}
+                      source={require('../images/icons/profile-25.jpg')}
                       >
                       </Image>
                       <Text style={{fontWeight:'bold',alignSelf:'center'}}>Tampa Curhat Beats</Text>

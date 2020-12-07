@@ -9,6 +9,8 @@ import * as React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { BottomTabNavigator  } from "./App/Navigation/TabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
+import configureStore from './App/redux/store/configureStore';
+import { Provider } from 'react-redux';
 // import HomeScreen from './src/screens/HomeScreen'
 // import PreviewScreen from './src/screens/PreviewScreen'
 
@@ -23,9 +25,11 @@ import { NavigationContainer } from "@react-navigation/native";
 const App: () => React$Node = () => {
   return (
     <View style={styles.container}>
+       <Provider store={configureStore}>
       <NavigationContainer>
               <BottomTabNavigator/>
       </NavigationContainer>
+      </Provider>
     </View>
   );
 };

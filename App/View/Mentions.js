@@ -1,6 +1,7 @@
 import React from "react";
 import {View,Text, Dimensions,StyleSheet,ScrollView,TouchableOpacity,Image} from "react-native";
 import styles from "../css/MentionsCss";
+import InboxDropdown from "../View/components/InboxDropdown";
 var {width,height} = Dimensions.get('window');
 
 
@@ -8,8 +9,10 @@ var {width,height} = Dimensions.get('window');
 export default class Mentions extends React.Component{
 
     render(){
+
         return(
             <View style={[{},styles.center]}>
+            <InboxDropdown  heading="Mentions" props={this.props}/>
               <ScrollView style={[{},styles.Container]}>
                  <View style={[{},styles.Row]}>
                   <View style={[{},styles.RoundImageView]}>

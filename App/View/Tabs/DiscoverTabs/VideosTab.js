@@ -131,7 +131,7 @@ export default class VideosTab extends React.Component{
                      <TouchableOpacity>
                      <View style={[{},styles.GridColumn]}>
                           <ImageBackground
-                          source={require('../../../images/icons/profile-24.jpg')}
+                          source={require('../../../images/icons/image-24.jpg')}
                           style={{height:'100%'}}
                           >
                           <View style={[{},styles.GridColumnRatingView]}>
