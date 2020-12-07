@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height:height,
     width:width,
+    backgroundColor:'#fff'
   },
 });
 
@@ -30,18 +31,21 @@ export default class SignInForm extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      showModal:false
+      showModal:false,
+      
     }
+    this.setState={tabBarVisible:true}
+
   }
 
 
   render(){
     return(
-      <View style={{height:height}}>
-        <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1,marginTop:10}}>
+      <View style={{height:height,}}>
+        <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1,marginTop:10,backgroundColor:'#fff'}}>
              <View style={{flex:1, alignSelf:'flex-start'}}>
                <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate('FindFriends')}
+                onPress={()=>this.props.navigation.navigate('SignIn')}
                >
                 <Image
                 source={require('../images/icons/backarrow-36.png')}
@@ -68,7 +72,7 @@ export default class SignInForm extends React.Component{
                </TouchableOpacity>
             </View>
             </View>
-      <View style={[{backgroundColor:'#fff',height:height,width:width}, styles.center ] }>
+      <View style={[{backgroundColor:'#fff',height:height,width:width,}, styles.center ] }>
       
       {/* <Modal
        isVisible={this.state.showModal}
@@ -79,7 +83,7 @@ export default class SignInForm extends React.Component{
         <Text>I am the modal content!</Text>
       </View> 
     </Modal> */}
-     <View style={{ flexDirection:"row",marginHorizontal:20,marginTop:10 }}>
+     <View style={{ flexDirection:"row",marginHorizontal:20,marginTop:10, }}>
           <TextInput
            style={{ flex:1, height:40,borderColor:'gray', borderWidth:1, borderRadius:5,backgroundColor:'#fff'}}
            placeholder={"Email"}

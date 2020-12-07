@@ -55,8 +55,14 @@ export default class MyVues extends React.Component {
       LikeModal: false,
       VidioReportModal: false,
       SameVideosModal: false,
+      tabBarVisible:true
     };
   }
+  componentWillMount(){
+    this.props.navigation.dangerouslyGetParent().setOptions({
+      tabBarVisible: this.state.tabBarVisible
+    });
+      }
   render() {
     console.log('get myvue props', this.props);
     return (

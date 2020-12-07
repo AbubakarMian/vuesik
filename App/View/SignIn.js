@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Button, Text, StyleSheet, TouchableOpacity,Image,Dimensions } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
+import { connect } from 'react-redux';
+import { SET_USER, LOGOUT_USER } from '../redux/constants/index';
 var { width, height } = Dimensions.get('window');
 
 
@@ -9,6 +11,7 @@ var { width, height } = Dimensions.get('window');
 const style =StyleSheet.create({
     center:{
         flex: 1,
+       
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
@@ -16,11 +19,34 @@ const style =StyleSheet.create({
     },
 });
 
-export default class SignIn extends React.Component{
+const navigationOptions = {header:null}
+ class SignIn extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            password:'',
+            message: '',
+            user: '',
+            access_token:'',
+            tabBarVisible:true
+        }
+    }
+onPress=()=>{
+    this.props.navigation.dangerouslyGetParent().setOptions({
+        tabBarVisible: this.state.tabBarVisible
+      });
+}
+
+
+
 
     render(){
+        console.log('props !!!!!!!!!!!',this.props)
         return(
-            <View style={{flex:1}}>
+            <View style={{flex:1,marginTop:50}}>
 
                         <View style={{alignSelf:'center', marginTop:30}}>
                             <Text style={{textAlign:'center', width:width -90,fontWeight: 'bold', fontSize:30}}>
@@ -46,6 +72,7 @@ export default class SignIn extends React.Component{
                         style={{ padding: 10, borderRadius: 30 , height:50}}>
                            
                         <TouchableOpacity 
+                        // onPress={this.onPress}
                         onPress={() => this.props.navigation.navigate('SignInForm')}
                         style={{ flexDirection:"row" }}>
                         
@@ -125,3 +152,17 @@ export default class SignIn extends React.Component{
     }
 }
 
+
+function mapStateToProps(state) {
+    return {
+      user: state.userReducer,
+    //   screen: state.screen
+    }
+  };
+  function mapDispatchToProps(dispatch) {
+    return {
+      setUser: (value) => dispatch({ type: SET_USER ,value:value}),
+      logoutUser: () => dispatch({ type: LOGOUT_USER })
+    }
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

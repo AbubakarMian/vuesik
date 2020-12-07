@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
              <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1,marginTop:10}}>
              <View style={{flex:1, alignSelf:'flex-start'}}>
                <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate('FindFriends')}
+                onPress={()=>this.props.navigation.navigate('SignUp')}
                >
                 <Image
                 source={require('../images/icons/backarrow-36.png')}

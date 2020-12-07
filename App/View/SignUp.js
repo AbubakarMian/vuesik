@@ -17,7 +17,7 @@ export default class MyVues extends React.Component{
 
     render(){
         return(
-            <View style={{ flex:1,backgroundColor:"#ffffff",paddingHorizontal:10, paddingTop:50,paddingBottom:50, width:width}}>
+            <View style={{ flex:1,backgroundColor:"#ffffff",paddingHorizontal:10, paddingTop:100,paddingBottom:50, width:width}}>
             <Text style={{ textAlign:'center',fontWeight:'bold', fontSize:30 }}>SignUp for Vuesik</Text>
             <View style={{ marginHorizontal:30,marginTop:20 }}>
                 <LinearGradient 
@@ -35,7 +35,7 @@ export default class MyVues extends React.Component{
                         height:30 }}
                         source={ require('../images/icons/mail.png') }>
                     </Image> 
-                    <Text style={{ marginHorizontal:100, textAlign:'center',alignSelf:'center', color:'#fff' }}>Use My Email</Text>
+                    <Text style={{ marginHorizontal:50, textAlign:'center',alignSelf:'center', color:'#fff' }}>Use My Email</Text>
                     </TouchableOpacity>
                 </LinearGradient>
             </View>

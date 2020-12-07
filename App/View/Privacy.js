@@ -68,6 +68,7 @@ export default class Privacy extends React.Component {
                   labelStyle={{color: 'black', fontWeight: '900'}}
                   size="mediam"
                   onToggle={false}
+                  
                 />
               </View>
             </View>
