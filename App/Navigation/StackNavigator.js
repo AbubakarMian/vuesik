@@ -81,7 +81,7 @@ const MainStackNavigator = ({navigation,route}) => {
   return (
     
     <Stack.Navigator
-      // initialRouteName="SignIn"
+      initialRouteName="SignIn"
       screenOptions={{
         headerShown: false,
         headerStyle: {
@@ -94,12 +94,12 @@ const MainStackNavigator = ({navigation,route}) => {
      >
         
       <Stack.Screen
-        name="SignIn"
-        component={SignIn}
-        navigationOptions={{tabBarVisible: false}}
+        name="SignIn"component={SignIn}
+        // navigationOptions={{tabBarVisible: false}}
       />
   
       {/* options={{ tabBarVisible:false}} */}
+      <Stack.Screen name="DeepArScreen" component={DeepArScreen}/>
       <Stack.Screen name="Likes" component={Likes} />
       <Stack.Screen name="Follow" component={Follow} />
       <Stack.Screen name="Mentions" component={Mentions} />
@@ -165,8 +165,8 @@ const InboxStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Inbox"
-        component={Inbox}
+        name="DeepArScreen"
+        component={DeepArScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

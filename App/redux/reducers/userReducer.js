@@ -1,4 +1,4 @@
-import { SET_USER, LOGOUT_USER } from '../constants';
+import { SET_USER, LOGOUT_USER } from '../constants/index';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const initialState = {
@@ -10,17 +10,17 @@ const initialState = {
 const userReducer = (state = initialState, action) =>  {
    
      switch (action.type) {
+         
 
         case SET_USER:
             AsyncStorage.setItem('User',JSON.stringify(state));
-
+            console.log('action ',state);
 
             return {
-                ...state,
-                id: action.value.id,
-                name: action.value.name,
-                email: action.value.email,
-                access_token: action.value.access_token
+                id: 13,
+        name: 'Testst',
+        email: 'tttttest@mail.com',
+        access_token: 'U1U5VElFTnNhV1Z1ZEVsRU9pQnJhR0YwYldWdVlXSnZkMkYwTFdGd2NDMXBiM009'
             }
             break;
         case LOGOUT_USER:

@@ -34,7 +34,16 @@ const navigationOptions = {header:null}
             tabBarVisible:true
         }
     }
-onPress=()=>{
+onPress=async ()=>{
+    // await this.props.setUser({
+    //     id: 13,
+    //     name: 'Testst',
+    //     email: 'tttttest@mail.com',
+    //     access_token: 'U1U5VElFTnNhV1Z1ZEVsRU9pQnJhR0YwYldWdVlXSnZkMkYwTFdGd2NDMXBiM009'
+    // });
+
+    console.log('user ser ',this.props);
+    return;
     this.props.navigation.dangerouslyGetParent().setOptions({
         tabBarVisible: this.state.tabBarVisible
       });

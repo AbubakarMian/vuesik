@@ -52,7 +52,7 @@ export default function DiscoverTabs (props) {
   );
   return (
     <View style={{flex:1}}>
-      <View style={[{},Tabstyles.TopBarRow]}>
+    <View style={[{},Tabstyles.TopBarRow]}>
                   <View style={[{},Tabstyles.TopBarRowIconView]}>
                     <TouchableOpacity>
                       <Image
@@ -89,6 +89,8 @@ export default function DiscoverTabs (props) {
                     </TouchableOpacity>
                   </View>
                 </View>
+    <View style={{flex:1}}>
+      
       <TabView
       // navigation={props.navigation} 
       navigationState={{ index, routes }}
@@ -97,6 +99,7 @@ export default function DiscoverTabs (props) {
       initialLayout={initialLayout}
       renderTabBar={renderTabBar}
     />
+    </View>
     </View>
   );
 }

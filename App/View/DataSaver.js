@@ -10,8 +10,8 @@ export default class MyVues extends React.Component{
 
     render(){
         return(
-            <View style={[{},styles.center]}>
-                <View style={{flexDirection:'row',width:width,paddingHorizontal:20,borderBottomWidth:1,paddingBottom:20}}>
+            <View>
+            <View style={{flexDirection:'row',width:width,paddingHorizontal:20,borderBottomWidth:1,paddingBottom:20}}>
                     <View style={{flex:1}}>
                         <TouchableOpacity
                         onPress={()=>this.props.navigation.navigate('Settings')}
@@ -28,6 +28,8 @@ export default class MyVues extends React.Component{
                         <Text style={{fontWeight:'bold',fontSize:15}}>Push notification</Text>
                     </View>
                 </View>
+            <View style={[{},styles.center]}>
+                
                 <ScrollView style={[{},styles.MainContainer]}>
                   
 
@@ -65,6 +67,7 @@ export default class MyVues extends React.Component{
                 
            
                 </ScrollView>
+            </View>
             </View>
         );
     }

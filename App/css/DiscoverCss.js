@@ -11,7 +11,7 @@ export default StyleSheet.create({
                
     center: {
         flex: 1,
-        paddingTop:100,
+        paddingTop:200,
         backgroundColor:'#fff',
         flexDirection:'column',
         height:height,
