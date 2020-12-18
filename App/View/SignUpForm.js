@@ -39,11 +39,27 @@ export default class SignUpForm extends React.Component {
       Firstname:'',Lastname:'',Username:'',Dob:'',Email:'',Password:'',ConfirmPassword:'',
       showModal:false
     };
+  }
+    componentDidMount(){
+
+      this.RegisterUser();
+    };
+
 
     RegisterUser=()=>{
+
+    
+
+     
       var formData = new FormData();
       var Firstname=this.state.Firstname;
       var Lastname=this.state.Lastname;
+      var Username=this.state.Username;
+      var Dob=this.state.Dob;
+      var Email=this.state.Email;
+      var Password=this.state.Password;
+      var ConfirmPassword=this.state.ConfirmPassword;
+      
       formData.append('firstname', this.state.Firstname);
       formData.append('lastname', this.state.Lastname);
       formData.append('username', this.state.Username);
@@ -53,28 +69,60 @@ export default class SignUpForm extends React.Component {
       formData.append('confirmpassword', this.state.ConfirmPassword);
 
       let postData = {
+        
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'multipart/form-data',
-          Authorization: this.props.user.access_token,
-          'Authorization-secure': this.props.user.access_token,
-          'client-id' : Constants.clientID
+          'Content-Type': 'application/json',
+           Authorization: 'TW9iaWxlIENsaWVudElEOiBUVzlpYVd4bElFTnNhV1Z1ZEVsRU9pQjJkV1Z6YVdzdFlYQndMV',
+           'Authorization-secure': 'TW9iaWxlIENsaWVudElEOiBUVzlpYVd4bElFTnNhV1Z1ZEVsRU9pQjJkV1Z6YVdzdFlYQndMV',
+           'client-id' : 'vuesik-app-mobile',
+          
+          
         },
         body: formData,
       };
-      if (this.state.email.trim() === '') {
-        this.refs.PopUp.setModal(true, 'Please Enter valid Input');
-        return;
-      }
-    }
+      
+      
+     return fetch('https://c478c8f55647.ngrok.io/vuesik/public/api/signup',postData)
+        .then(response => response.text())
+        .then(responseJson => {
+          console.log('responseJson !!!!!!!!!!',responseJson);
+          if (responseJson.status === true) {
+             
+            this.setState({
+                  access_token: responseJson.response.access_token,
+              });
+              this.props.setUser(this.state);
+              this.props.navigation.navigate('Home')
+          } else {
+              // this.refs.PopUp.setModal(true, responseJson.error.message);
+            
+          }
+        })
+        .catch(error => {
+          console.log("error", error)  
+        });
+    };
 
-  }
+
+
+
+
+
+      // if (this.state.email.trim() === '') {
+      //   this.refs.PopUp.setModal(true, 'Please Enter valid Input');
+      //   return;
+      // }
+    
+
+  
 
   shoVarificationModal=()=>{
     this.refs.verificationModal.toggleModal();
     
   }
+
 
   render() {
     return (
@@ -215,7 +263,9 @@ export default class SignUpForm extends React.Component {
               style={{padding: 10, borderRadius: 30, height: 50, width: 200}}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
-                onPress={this.shoVarificationModal}>
+                // onPress={this.shoVarificationModal}
+                // onPress={RegisterUser}
+                >
                   {/* refs.verificationModal.toggleModal */}
                 <Image
                   style={{
