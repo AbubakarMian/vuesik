@@ -10,7 +10,8 @@ export default StyleSheet.create({
                
     center: {
         flex: 1,
-        paddingTop:10,
+        height:height,
+        width:width,
         alignItems: "center",
         textAlign: "center",
         backgroundColor:'#fff',

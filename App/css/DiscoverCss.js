@@ -11,26 +11,28 @@ export default StyleSheet.create({
                
     center: {
         flex: 1,
-        paddingTop:100,
+        paddingTop:200,
         backgroundColor:'#fff',
         flexDirection:'column',
         height:height,
         width:width,
       },
       TopBarRow:{
-          marginTop:30,
-          marginBottom:10,
+          marginTop:0,
+          marginBottom:0,
+          
           flexDirection:'row',
           position:'relative',
           justifyContent:'center',
           width:width,
           alignItems:'center',
+          backgroundColor:'#fff'
 
       },
       TopBarRowIconView:{
           position:'absolute',
           left: 5,
-       
+          backgroundColor:'#fff', 
           width:'10%'  
       },
       TopBarRowSearchBarView:{
@@ -48,6 +50,7 @@ export default StyleSheet.create({
         width:'15%', 
         position:'absolute',
         right: 10,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
        
     },
    

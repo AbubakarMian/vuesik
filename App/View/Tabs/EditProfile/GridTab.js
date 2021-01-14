@@ -1,6 +1,7 @@
 import React from "react";
 import {View,Text, Dimensions,StyleSheet,ImageBackground,TouchableOpacity,Image} from "react-native";
-import styles from "../../../css/GridCSS"
+import styles from "../../../css/GridCSS";
+import Video from 'react-native-video';
 var {width,hight} = Dimensions.get('window');
 
 const style =StyleSheet.create({
@@ -26,7 +27,7 @@ export default class GridTab extends React.Component{
     source={require('../../../images/icons/image-28.jpg')}
     >
       <Text style={[styles.gridColumnRating]}>
-        24.8k
+        3
       </Text>
       <TouchableOpacity>
     <Image
@@ -44,7 +45,7 @@ export default class GridTab extends React.Component{
     source={require('../../../images/icons/image-29.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        0
       </Text>
       <TouchableOpacity>
     <Image
@@ -62,7 +63,7 @@ export default class GridTab extends React.Component{
     source={require('../../../images/icons/image-30.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        1
       </Text>
       <TouchableOpacity>
     <Image
@@ -82,7 +83,7 @@ export default class GridTab extends React.Component{
     source={require('../../../images/icons/image-31.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        5
       </Text>
       <TouchableOpacity>
     <Image
@@ -100,7 +101,7 @@ export default class GridTab extends React.Component{
     source={require('../../../images/icons/image-32.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        4
       </Text>
       <TouchableOpacity>
     <Image

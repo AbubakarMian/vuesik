@@ -129,7 +129,7 @@ export default class SimilerAcounts extends React.Component {
           <View styles={[{},styles.cardViewHeading]}> 
           <Text style={{color:'purple',fontWeight:'500',marginLeft:10,marginBottom:5}}>Silmiler account for you</Text>
           </View>
-            <View style={[{paddingHorizontal:10},styles.cardViewRow]}>
+            <View style={[{paddingHorizontal:10,height:'20%'},styles.cardViewRow]}>
               <View style={[{},styles.cardViewColumn]}>
                  <TouchableOpacity style={{alignSelf:'flex-end',right:10}}>
                    <Text>x</Text>

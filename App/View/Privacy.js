@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Dimensions, StyleSheet, Image} from 'react-native';
+import {View, Text, Dimensions, StyleSheet, Image,Switch} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import styles from '../css/PrivacyCss';
 import ToggleSwitch from 'toggle-switch-react-native';
@@ -8,7 +8,7 @@ var {width, height} = Dimensions.get('window');
 export default class Privacy extends React.Component {
 
   render() {
-    
+    // const  [isSwitchEnabled, setSwitch] = React.useState(false)
     return (
       <View style={[{}, styles.center]}>
         <View style={[{}, styles.TopBar]}>
@@ -42,7 +42,7 @@ export default class Privacy extends React.Component {
                 //   label="Example label"
                   labelStyle={{color: 'black', fontWeight: '900'}}
                   size="mediam"
-                  onToggle={false}
+                  onToggle={true}
                 />
               </View>
             </View>
@@ -100,6 +100,7 @@ export default class Privacy extends React.Component {
                 <Text style={[{}, styles.Header]}>Allow 3rd Party Ads</Text>
               </View>
               <View style={[{}, styles.action]}>
+          
               <ToggleSwitch
                   isOn={false}
                   onColor="purple"
@@ -107,7 +108,9 @@ export default class Privacy extends React.Component {
                 //   label="Example label"
                   labelStyle={{color: 'black', fontWeight: '900'}}
                   size="mediam"
-                  onToggle={false}
+                  onToggle={true}
+                  isOn={true}
+                  
                 />
               </View>
             </View>

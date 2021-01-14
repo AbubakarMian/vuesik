@@ -22,13 +22,24 @@ import Home from "../View/Home"
 import styles from "../css/EditProfileCSS"
 const isAndroid = Platform.OS == 'android'
 var { width, height } = Dimensions.get('window');
-
+import Video from 'react-native-video';
 
   export default class EditProfile extends React.Component{
+    componentWillMount() {
+    //   this.props.navigation.dangerouslyGetParent().setOptions({
+    //     tabBarVisible: this.state.tabBarVisible
+    //   });
+  
+     
+      
+    }; 
+  
       render(){
+       
+      
           return(
             <View style={[{},styles.center]}>
-             <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1}}>
+             <View style={{flexDirection:'row',width:width,paddingHorizontal:10,borderBottomWidth:1,alignItems:'center',justifyContent:'center',paddingBottom:10}}>
              <View style={{flex:1, alignSelf:'flex-start'}}>
                <TouchableOpacity
                 onPress={()=>this.props.navigation.navigate('FindFriends')}
@@ -42,7 +53,7 @@ var { width, height } = Dimensions.get('window');
                </TouchableOpacity>
              </View>
              <View style={{flex:4, justifyContent:'center',alignSelf:'center'}}>
-               <Text style={{textAlign:'center',alignSelf:'center',}}>Adam Smith</Text>
+               <Text style={{textAlign:'center',alignSelf:'center',}}>aukhan15</Text>
              </View>
              
              <View style={{flex:1,justifyContent:'flex-end',alignItems:'flex-end'}}>
@@ -75,19 +86,19 @@ var { width, height } = Dimensions.get('window');
                   </View>
                 </TouchableOpacity>
                   <TouchableOpacity style={[{},styles.displayFollowing]}>
-                      <Text style={{ color:'#800080',fontWeight:'bold',fontSize:20,alignSelf:'center' }}>40k</Text>
+                      <Text style={{ color:'#800080',fontWeight:'bold',fontSize:20,alignSelf:'center' }}>2</Text>
                       <Text>Following</Text>
                     
                 
 
                   </TouchableOpacity>
                   <TouchableOpacity style={[{},styles.displayFollowing]}>
-                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center' }}>1.10M</Text>
+                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center' }}>0</Text>
                       <Text>Followers</Text>
                   
                   </TouchableOpacity>
                   <TouchableOpacity style={[{},styles.displayFollowing]}>
-                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center',alignItems:'center' }}>17.3M</Text>
+                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center',alignItems:'center' }}>3</Text>
                       <Text style={{alignSelf:'center',alignItems:'center'}}>Likes</Text>
                   </TouchableOpacity>
                   

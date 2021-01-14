@@ -24,7 +24,7 @@ export default class Inbox extends React.Component {
         {label: 'Followers / Following', value: 'follow'},
     ]}
     defaultValue={this.state.country}
-    containerStyle={{height: 80}}
+    containerStyle={{height: 30}}
     style={{backgroundColor: '#fafafa',}}
     itemStyle={{
         justifyContent: 'flex-start'
