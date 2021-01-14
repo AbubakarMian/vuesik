@@ -14,11 +14,11 @@ export default class Header extends React.Component{
             flexDirection: 'row',
             width: width,
             paddingHorizontal: 10,
-            paddingVertical: 20,
+            paddingVertical:20,
             borderBottomWidth: 1,
             backgroundColor:'#fff'
           }}>
-          <View style={{flex: 1, alignSelf: 'flex-start'}}>
+          <View style={{flex: 1, alignSelf: 'flex-start',backgroundColor:'#fff'}}>
             <TouchableOpacity
               onPress={()=>this.props.navigation.navigate('SignUp')}>
               <Image
@@ -27,7 +27,7 @@ export default class Header extends React.Component{
             </TouchableOpacity>
           </View>
           <View
-            style={{flex: 4, justifyContent: 'center', alignSelf: 'center'}}>
+            style={{flex: 4, justifyContent: 'center', alignSelf: 'center',}}>
             <Text
               style={{
                 textAlign: 'center',

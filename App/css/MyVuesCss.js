@@ -14,6 +14,8 @@ export default StyleSheet.create({
           color:"#fff",
           paddingBottom:'10%'
         },
+
+      
         viewBottom:{
             flex: 1,
             flexDirection: 'column',

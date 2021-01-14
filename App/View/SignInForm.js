@@ -32,17 +32,82 @@ export default class SignInForm extends React.Component{
     super(props)
     this.state={
       showModal:false,
-      
+      tabBarVisible:false,
+      Email: 'aukhan10@gmail.com',
+      Password: '123',
     }
-    this.setState={tabBarVisible:true}
+  
 
   }
+  componentWillMount(){
+    this.props.navigation.dangerouslyGetParent().setOptions({
+      tabBarVisible: this.state.tabBarVisible
+    });
+      }
+  
 
+static navigationOptions = {
+    header: true,
+};
+
+  SignInRequest =() => {
+    if (this.state.email === '') {
+      Alert.alert('Please Enter valid Input');
+      this.refs.PopUp.setModal(true, 'Please Enter valid Input');
+      return;
+    }
+
+    if(this.state.Password === '')
+    {
+      // Alert.alert('dfs')''
+    }
+
+    
+
+    var formData = new FormData();
+    formData.append('email', this.state.Email);
+    formData.append('password', this.state.Password);
+
+    let postData = {
+
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'multipart/form-data',
+        Authorization: 'TW9iaWxlIENsaWVudElEOiBUVzlpYVd4bElFTnNhV1Z1ZEVsRU9pQjJkV1Z6YVdzdFlYQndMV',
+        'Authorization-secure': 'TW9iaWxlIENsaWVudElEOiBUVzlpYVd4bElFTnNhV1Z1ZEVsRU9pQjJkV1Z6YVdzdFlYQndMV',
+        'client-id': 'vuesik-app-mobile',
+
+
+      },
+      body: formData,
+    };
+
+
+    fetch('http://development.hatinco.com/vuesik_backend/public/api/login', postData)
+      .then(response => response.json())
+      .then(responseJson => {
+        if (responseJson.status === true) {
+          this.setState({
+            access_token: responseJson.response.access_token,
+          });
+          this.props.navigation.navigate('MyVues');
+        }
+        else {
+          
+         
+        }
+      })
+      .catch(error => {
+        Alert.alert("Invalid email or password!")
+        console.log(error)
+      });
+  };
 
   render(){
     return(
       <View style={{height:height,}}>
-        <View style={{flexDirection:'row',width:width,paddingHorizontal:10,paddingVertical:10,borderBottomWidth:1,marginTop:10,backgroundColor:'#fff'}}>
+        <View style={{flexDirection:'row',width:width,paddingHorizontal:10,borderBottomWidth:1,paddingBottom:10,backgroundColor:'#fff'}}>
              <View style={{flex:1, alignSelf:'flex-start'}}>
                <TouchableOpacity
                 onPress={()=>this.props.navigation.navigate('SignIn')}
@@ -60,39 +125,24 @@ export default class SignInForm extends React.Component{
              </View>
              
              <View style={{flex:1,justifyContent:'flex-end',alignItems:'flex-end'}}>
-             <TouchableOpacity
-                // onPress={()=>this.props.navigation.navigate('Settings')}
-               >
-                {/* <Image
-                source={require('../images/icons/settings-23.png')}
-                style={{height:30,width:5,marginRight:10}}
-                >
-
-                </Image> */}
+             <TouchableOpacity>
+                
                </TouchableOpacity>
             </View>
             </View>
       <View style={[{backgroundColor:'#fff',height:height,width:width,}, styles.center ] }>
-      
-      {/* <Modal
-       isVisible={this.state.showModal}
-      style={{height:100,width:width-100,justifyContent:'center',
-      alignSelf:'center'}}>
-      <View style={{ height:height-50,width:width-100,flex: 1, backgroundColor:'#fff',justifyContent:'center',
-      alignItems:'center' }}>
-        <Text>I am the modal content!</Text>
-      </View> 
-    </Modal> */}
      <View style={{ flexDirection:"row",marginHorizontal:20,marginTop:10, }}>
           <TextInput
            style={{ flex:1, height:40,borderColor:'gray', borderWidth:1, borderRadius:5,backgroundColor:'#fff'}}
            placeholder={"Email"}
+           onChangeText={text => this.setState({ Email: text })}
           />
       </View>
       <View style={{ flexDirection:"row",marginHorizontal:20,marginTop:10 }}>
           <TextInput
            style={{ flex:1, height:40,borderColor:'gray', borderWidth:1, borderRadius:5,backgroundColor:'#fff'}}
            placeholder={"Password"}
+           onChangeText={text => this.setState({ Password: text })}
           />
       </View>
 
@@ -126,9 +176,8 @@ export default class SignInForm extends React.Component{
                      
                   <TouchableOpacity
                  
-                 
-                  onPress={()=>this.setState({showModal:true})}
-                  onPress={() => this.props.navigation.navigate('MyVues')}
+               
+                  onPress={() => this.SignInRequest()}
                   style={{ flexDirection:"row"}}>
                     
                   <Image style={{

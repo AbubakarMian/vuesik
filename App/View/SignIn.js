@@ -31,9 +31,14 @@ const navigationOptions = {header:null}
             message: '',
             user: '',
             access_token:'',
-            tabBarVisible:true
+            tabBarVisible:false
         }
     }
+    componentWillMount(){
+        this.props.navigation.dangerouslyGetParent().setOptions({
+          tabBarVisible: this.state.tabBarVisible
+        });
+          }
 onPress=async ()=>{
     // await this.props.setUser({
     //     id: 13,

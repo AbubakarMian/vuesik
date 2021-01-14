@@ -51,7 +51,7 @@ export default function DiscoverTabs (props) {
     />
   );
   return (
-    <View style={{flex:1}}>
+    <View style={{flex:1,backgroundColor:'#fff'}}>
     <View style={[{},Tabstyles.TopBarRow]}>
                   <View style={[{},Tabstyles.TopBarRowIconView]}>
                     <TouchableOpacity>

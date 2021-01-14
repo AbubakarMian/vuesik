@@ -10,61 +10,106 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  Alert,
 } from 'react-native';
+import Video from 'react-native-video';
 // import { TouchableOpacity } from "react-native-gesture-handler";
 import ToggleSwitch from 'toggle-switch-react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {ColorPicker, TriangleColorPicker} from 'react-native-color-picker';
+import { ColorPicker, TriangleColorPicker } from 'react-native-color-picker';
 import styles from '../css/PostCSS';
 import Modal from 'react-native-modal';
-import {TextInput} from 'react-native-gesture-handler';
-var {width, height} = Dimensions.get('window');
+import { TextInput } from 'react-native-gesture-handler';
+var { width, height } = Dimensions.get('window');
 
-const ModalStyles=StyleSheet.create({
-    center: {
-        flex: 1,
-        paddingTop:50,
-        alignItems: "center",
-        textAlign: "center",
-        backgroundColor:'#fff',
-        flexDirection:'column',
-        height:height,
-        width:width,
-      },
-      MainContainer:{
-        width:width-40,
-        height:250,
-         
-        borderRadius:5, 
-        alignSelf:'center',
-        flexDirection:'column',
-        alignItems:'center',
-        justifyContent:'center',
-      },
-      Heading:{
-          color:"#fff",
-          fontWeight:'bold',
-          fontSize:20,
-      },
-      Paragraph:{
-          color:'#fff',
-          fontSize:12,
-      },
-      btnView:{
-          backgroundColor:'#fff',
-          
-          paddingVertical:6,
-          borderRadius:5,
-         
-      }
+const ModalStyles = StyleSheet.create({
+  center: {
+    flex: 1,
+    paddingTop: 50,
+    alignItems: "center",
+    textAlign: "center",
+    backgroundColor: '#fff',
+    flexDirection: 'column',
+    height: height,
+    width: width,
+  },
+  MainContainer: {
+    width: width - 40,
+    height: 250,
+
+    borderRadius: 5,
+    alignSelf: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  Heading: {
+    color: "#fff",
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  Paragraph: {
+    color: '#fff',
+    fontSize: 12,
+  },
+  btnView: {
+    backgroundColor: '#fff',
+
+    paddingVertical: 6,
+    borderRadius: 5,
+
+  }
 })
 export default class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       PostModal: false,
+      userId: 2,
+      url:'http://techslides.com/demos/sample-videos/small.mp4',
+      ispublic:'',
+      detail:'',     
     };
   }
+  postData=async()=>{
+    var formData=new FormData();
+    formData.append('userId', 2);
+    formData.append('url',);
+    formData.append('ispublic',0);
+    formData.append('detail','askhd saijdljsa');
+
+    let postData = {
+
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'multipart/form-data',
+        Authorization: 'TW9iaWxlIENsaWVudElEOiBUVzlpYVd4bElFTnNhV1Z1ZEVsRU9pQjJkV1Z6YVdzdFlYQndMV',
+        'Authorization-secure': 'TW9iaWxlIENsaWVudElEOiBUVzlpYVd4bElFTnNhV1Z1ZEVsRU9pQjJkV1Z6YVdzdFlYQndMV',
+        'client-id': 'vuesik-app-mobile',
+
+
+      },
+      body: formData,
+    };
+
+    fetch('http://development.hatinco.com/vuesik_backend/public/api/video',postData)
+    .then(response=>response.json())
+    .then(responseJson=>{
+      
+      if(responseJson===true){
+
+        this.setState({
+          access_token: responseJson.response.access_token,
+        });
+        {() => this.setState({ logoutModal: false })}
+      }
+      else{
+        console.log(formData)
+      }
+    })
+  }
+ 
   render() {
     return (
       <View style={[{}, styles.center]}>
@@ -74,19 +119,19 @@ export default class Post extends React.Component {
             width: width,
             paddingHorizontal: 20,
             borderBottomWidth: 1,
-            paddingBottom: 20,
-            justifyContent:'center'
+            paddingVertical: 10,
+            justifyContent: 'center'
           }}>
-          <View style={{flex: 1}}>
+          <View style={{ flex: 1 }}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('VideoComplete')}>
               <Image
-                style={{width: 30, height: 20}}
+                style={{ width: 30, height: 20 }}
                 source={require('../images/icons/backarrow-36.png')}></Image>
             </TouchableOpacity>
           </View>
-          <View style={{flex: 1.25,alignSelf:'center'}}>
-            <Text style={{fontWeight: 'bold', fontSize: 15}}>
+          <View style={{ flex: 1.25, alignSelf: 'center' }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 15 }}>
               Post
             </Text>
           </View>
@@ -98,7 +143,7 @@ export default class Post extends React.Component {
                 <View>
                   <TextInput
                     multiline={true}
-                    style={[{marginTop: 20}, styles.MainViewCol1RowDescTXT]}>
+                    style={[{ marginTop: 20 }, styles.MainViewCol1RowDescTXT]}>
                     Your account is public and public videos will be visible to
                     everyone.
                   </TextInput>
@@ -127,11 +172,11 @@ export default class Post extends React.Component {
                     }}
                   />
                 </View>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   <TouchableOpacity>
                     <View
                       style={[
-                        {backgroundColor: 'darkblue'},
+                        { backgroundColor: 'darkblue' },
                         styles.MainViewCol1RowPostBtn,
                       ]}>
                       <Text style={[{}, styles.MainViewCol1RowDescBtnTXT]}>
@@ -142,7 +187,7 @@ export default class Post extends React.Component {
                   <TouchableOpacity>
                     <View
                       style={[
-                        {backgroundColor: 'purple'},
+                        { backgroundColor: 'purple' },
                         styles.MainViewCol1RowPostBtn,
                       ]}>
                       <Text style={[{}, styles.MainViewCol1RowDescBtnTXT]}>
@@ -155,9 +200,20 @@ export default class Post extends React.Component {
               <View style={[{}, styles.MainViewCol1RowPost]}>
                 <View>
                   <View>
-                    <Image
+                    <Video source={{ uri: 'http://techslides.com/demos/sample-videos/small.webm' }}
+                      ref={(ref) => {
+                        this.player = ref
+                      }}
+                      onBuffer={this.onBuffer}
+                      onError={this.videoError}
+                      fullscreen={true}
+                      resizeMode={'cover'}
+
+                      repeat={true}
+                      style={[{ height: 90, width: 70 }, styles.backgroundVideo]} />
+                    {/* <Image
                       style={{height: 90, width: 70}}
-                      source={require('../images/icons/bgPostImage.jpg')}></Image>
+                      source={require('../images/icons/bgPostImage.jpg')}></Image> */}
                   </View>
                   <View
                     style={{
@@ -183,98 +239,98 @@ export default class Post extends React.Component {
             </View>
           </View>
           <View style={[{}, styles.MainViewCol2]}>
-            <View style={{flexDirection: 'row', paddingVertical: 10}}>
+            <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
               <View>
                 <Image
-                  style={{height: 20, width: 20}}
+                  style={{ height: 20, width: 20 }}
                   source={require('../images/icons/lock-06.png')}></Image>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <Text style={[{}, styles.Col2Txt]}>
                   Who can view this video
                 </Text>
               </View>
-              <View style={{flex: 1}}>
-                <Text style={[{textAlign: 'right'}, styles.Col2Txt]}>
-                  Public >{' '}
+              <View style={{ flex: 1 }}>
+                <Text style={[{ textAlign: 'right' }, styles.Col2Txt]}>
+                  Public >{''}
                 </Text>
               </View>
             </View>
-            <View style={{flexDirection: 'row', paddingVertical: 10}}>
+            <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
               <View>
                 <Image
-                  style={{height: 20, width: 20}}
+                  style={{ height: 20, width: 20 }}
                   source={require('../images/icons/comments-07.png')}></Image>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <Text style={[{}, styles.Col2Txt]}>Allow comments</Text>
               </View>
-              <View style={{flex: 1, alignItems: 'flex-end'}}>
+              <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <ToggleSwitch
                   isOn={true}
                   onColor="purple"
                   offColor="gray"
-                  labelStyle={{color: 'black', fontWeight: '900'}}
+                  labelStyle={{ color: 'black', fontWeight: '900' }}
                   size="small"
                   onToggle={(isOn) => console.log('changed to : ', isOn)}
                 />
               </View>
             </View>
-            <View style={{flexDirection: 'row', paddingVertical: 10}}>
+            <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
               <View>
                 <Image
-                  style={{height: 20, width: 20}}
+                  style={{ height: 20, width: 20 }}
                   source={require('../images/icons/duet-08.png')}></Image>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <Text style={[{}, styles.Col2Txt]}>Allow Duet</Text>
               </View>
-              <View style={{flex: 1, alignItems: 'flex-end'}}>
+              <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <ToggleSwitch
                   isOn={true}
                   onColor="purple"
                   offColor="gray"
-                  labelStyle={{color: 'black', fontWeight: '900'}}
+                  labelStyle={{ color: 'black', fontWeight: '900' }}
                   size="small"
                   onToggle={(isOn) => console.log('changed to : ', isOn)}
                 />
               </View>
             </View>
-            <View style={{flexDirection: 'row', paddingVertical: 10}}>
+            <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
               <View>
                 <Image
-                  style={{height: 20, width: 20}}
+                  style={{ height: 20, width: 20 }}
                   source={require('../images/icons/stitch-09.png')}></Image>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <Text style={[{}, styles.Col2Txt]}>Allow Stitch</Text>
               </View>
-              <View style={{flex: 1, alignItems: 'flex-end'}}>
+              <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <ToggleSwitch
                   isOn={true}
                   onColor="purple"
                   offColor="gray"
-                  labelStyle={{color: 'black', fontWeight: '900'}}
+                  labelStyle={{ color: 'black', fontWeight: '900' }}
                   size="small"
                   onToggle={(isOn) => console.log('changed to : ', isOn)}
                 />
               </View>
             </View>
-            <View style={{flexDirection: 'row', paddingVertical: 10}}>
+            <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
               <View>
                 <Image
-                  style={{height: 20, width: 20}}
+                  style={{ height: 20, width: 20 }}
                   source={require('../images/icons/save-10.png')}></Image>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <Text style={[{}, styles.Col2Txt]}>Save video to device</Text>
               </View>
-              <View style={{flex: 1, alignItems: 'flex-end'}}>
+              <View style={{ flex: 1, alignItems: 'flex-end' }}>
                 <ToggleSwitch
                   isOn={true}
                   onColor="purple"
                   offColor="gray"
-                  labelStyle={{color: 'black', fontWeight: '900'}}
+                  labelStyle={{ color: 'black', fontWeight: '900' }}
                   size="small"
                   onToggle={(isOn) => console.log('changed to : ', isOn)}
                 />
@@ -285,7 +341,7 @@ export default class Post extends React.Component {
             <View>
               <Text style={[{}, styles.Col2Txt]}>Also share on:</Text>
             </View>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
               <View>
                 <TouchableOpacity>
                   <View>
@@ -343,8 +399,8 @@ export default class Post extends React.Component {
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={{flexDirection: 'row', padding: 10}}>
-              <View style={{flex: 1, marginRight: 10}}>
+            <View style={{ flexDirection: 'row', padding: 10 }}>
+              <View style={{ flex: 1, marginRight: 10 }}>
                 <TouchableOpacity>
                   <View
                     style={{
@@ -356,18 +412,18 @@ export default class Post extends React.Component {
                     }}>
                     <View>
                       <Image
-                        style={{height: 20, width: 20}}
+                        style={{ height: 20, width: 20 }}
                         source={require('../images/icons/draft-13.png')}></Image>
                     </View>
                     <View>
-                      <Text style={{color: '#fff', marginLeft: 20}}>Draft</Text>
+                      <Text style={{ color: '#fff', marginLeft: 20 }}>Draft</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
               </View>
-              <View style={{flex: 1}}>
+              <View style={{ flex: 1 }}>
                 <TouchableOpacity
-                  onPress={() => this.setState({PostModal: true})}>
+                  onPress={() => this.setState({ PostModal: true })}>
                   <View
                     style={{
                       flexDirection: 'row',
@@ -378,11 +434,11 @@ export default class Post extends React.Component {
                     }}>
                     <View>
                       <Image
-                        style={{height: 20, width: 20}}
+                        style={{ height: 20, width: 20 }}
                         source={require('../images/icons/send-14.png')}></Image>
                     </View>
                     <View>
-                      <Text style={{color: '#fff', marginLeft: 20}}>Post</Text>
+                      <Text style={{ color: '#fff', marginLeft: 20 }}>Post</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
@@ -394,10 +450,10 @@ export default class Post extends React.Component {
         {/* Post Modal  */}
         <Modal
           isVisible={this.state.PostModal}
-          onBackdropPress={() => this.setState({logoutModal: false})}>
+          onBackdropPress={() => this.setState({ logoutModal: false })}>
           <LinearGradient
-            start={{x: 0.1, y: 0.25}}
-            end={{x: 0.7, y: 1.0}}
+            start={{ x: 0.1, y: 0.25 }}
+            end={{ x: 0.7, y: 1.0 }}
             colors={['#2e3192', '#800080', '#93278f']}
             style={{
               borderRadius: 5,
@@ -407,48 +463,50 @@ export default class Post extends React.Component {
             <View style={[{}, ModalStyles.MainContainer]}>
               <View>
                 <Text style={[{}, ModalStyles.Heading]}>
-                Post Vidio publicaly?
+                  Post Vidio publicaly?
                 </Text>
               </View>
               <View>
                 <Text style={[{}, ModalStyles.Paragraph]}>
-                Your account is public and your public
+                  Your account is public and your public
                 </Text>
               </View>
               <View>
                 <Text style={[{}, ModalStyles.Paragraph]}>
-                videos will be visible to everyone.
+                  videos will be visible to everyone.
                 </Text>
               </View>
               <View>
-                <Text style={[{marginTop:20}, ModalStyles.Paragraph]}>
-                You can make this video private. or switch to
+                <Text style={[{ marginTop: 20 }, ModalStyles.Paragraph]}>
+                  You can make this video private. or switch to
                 </Text>
               </View>
               <View>
-                <Text style={[{marginTop:20}, ModalStyles.Paragraph]}>
-                a private account in your privacy settings.
+                <Text style={[{ marginTop: 20 }, ModalStyles.Paragraph]}>
+                  a private account in your privacy settings.
                 </Text>
               </View>
-              
-              <View style={{flexDirection: 'row', marginVertical: 10}}>
+
+              <View style={{ flexDirection: 'row', marginVertical: 10 }}>
                 <TouchableOpacity
-                  onPress={() => this.setState({logoutModal: false})}
+                  onPress={() => this.setState({ logoutModal: false })}
                   onPress={() => this.props.navigation.navigate('SignIn')}>
                   <View
                     style={[
-                      {marginRight: 10, paddingHorizontal: 20},
+                      { marginRight: 10, paddingHorizontal: 20 },
                       ModalStyles.btnView,
                     ]}>
                     <Text>Cancel</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => this.setState({logoutModal: false})}
-                  onPress={() => this.props.navigation.navigate('SignIn')}>
-                  <View style={[{paddingHorizontal: 30}, ModalStyles.btnView]}>
+                  onPress={()=>this.postData()}
+                  // onPress={() => this.setState({ logoutModal: false })}
+                  // onPress={() => this.props.navigation.navigate('MyVues')}
+                  >
+                  <View style={[{ paddingHorizontal: 30 }, ModalStyles.btnView]}>
                     <Text>Post Now</Text>
-                  </View>
+                    </View>
                 </TouchableOpacity>
               </View>
             </View>

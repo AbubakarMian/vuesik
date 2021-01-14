@@ -138,11 +138,25 @@ const styles = StyleSheet.create({
     
   });
   export default class Profile extends React.Component{
+    constructor(props) {
+      super(props);
+      this.state = {
+        tabBarVisible: true,
+      };
+    }
+    // componentWillMount() {
+    //   this.props.navigation.dangerouslyGetParent().setOptions({
+    //     tabBarVisible: this.state.tabBarVisible
+    //   });
+    // };
+    
       render(){
+        console.log('here',this.props.route.params.likes)
+        // console.log(ownerId)
           return(
             <View style={[{},styles.center]}>
 
-         
+            {/* <Text>fdg</Text> */}
             
             <View style={[{},styles.displayView]}>
               <View style={{flexDirection:'row'}}>
@@ -155,15 +169,15 @@ const styles = StyleSheet.create({
                   <Text style={{textAlign:'center'}}>...</Text>
                   </View>
                   <TouchableOpacity style={[{},styles.displayFollowing]}>
-                      <Text style={{ color:'#800080',fontWeight:'bold',fontSize:20,alignSelf:'center' }}>40k</Text>
+                      <Text style={{ color:'#800080',fontWeight:'bold',fontSize:20,alignSelf:'center' }}>{this.props.route.params.likes +4 ?? 0}</Text>
                       <Text>Following</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={[{},styles.displayFollowing]}>
-                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center' }}>1.10M</Text>
+                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center' }}>{this.props.route.params.likes +2 ?? 0}</Text>
                       <Text>Followers</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={[{},styles.displayFollowing]}>
-                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center',alignItems:'center' }}>17.3M</Text>
+                      <Text style={{color:'#800080', fontWeight:'bold',fontSize:20,alignSelf:'center',alignItems:'center' }}>{this.props.route.params.likes +10 ?? 0}</Text>
                       <Text style={{alignSelf:'center',alignItems:'center'}}>Likes</Text>
                   </TouchableOpacity>
                   
@@ -238,7 +252,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-28.jpg')}
        >
          <Text style={[styles.gridColumnRating]}>
-           24.8k
+         {this.props.route.params.likes +18 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -256,7 +270,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-29.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +11 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -274,7 +288,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-30.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +24 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -294,7 +308,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-31.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +33 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -312,7 +326,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-32.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +5 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -330,7 +344,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-33.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +22 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -350,7 +364,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-34.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +38 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -370,7 +384,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-35.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +77 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -389,7 +403,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-36.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes + 34 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -411,7 +425,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-34.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +43 ?? 0}
          </Text>
          <TouchableOpacity>
        <Image
@@ -431,7 +445,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-35.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+          {this.props.route.params.likes +35 ?? 0}
          </Text>
         <TouchableOpacity>
         <Image
@@ -451,7 +465,7 @@ const styles = StyleSheet.create({
        source={require('../images/icons/image-36.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.
+          {this.props.route.params.likes + 51 ?? 0}
          </Text>
        <TouchableOpacity>
        <Image

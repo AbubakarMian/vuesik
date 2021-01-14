@@ -36,7 +36,7 @@ export default class MyQrCode extends React.Component{
                     </Image>
                 </View>
                 <View style={{marginTop:10,marginBottom:50}}>
-                    <Text style={{fontSize:30,fontWeight:'bold'}}>Waleedhuxain</Text>
+                    <Text style={{fontSize:30,fontWeight:'bold'}}>aukhan15</Text>
                 </View>
                 <View>
                     <Text style={{color:'#aaa',fontSize:10}}>Scan ViewSik's Code to follow me</Text>

@@ -6,6 +6,10 @@ import {
 import DeepARView from './../components/DeepARView';
 import { effectsData } from './../effectsData';
 import { slideTransitionDefinition } from './../components/simplenavigator/TransitionDefinitions'
+// import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+// import * as ImagePicker from '../../src';
+// import * as ImagePicker '../../assets/'
+import ImagePicker from 'react-native-image-crop-picker';
 
 class HomeScreen extends React.Component {ß
 
@@ -100,23 +104,30 @@ class HomeScreen extends React.Component {ß
   }
 
   screenshotTaken = (screenshotPath) => {
-    const path = 'file://' + screenshotPath;
+    const path = 'file:///' + screenshotPath;
+    console.log(path)
     const transition = slideTransitionDefinition({ isVertical: true, direction: 1, duration: 200 })
-    this.props.push('preview', transition, { screenshotPath: path })
+    // this.props.push('preview', transition, { screenshotPath: path })
   }
 
 
   startRecording = () => {
-    if (this.deepARView) {
-      this.deepARView.startRecording()
-    }
+    
+    this.deepARView.startRecording()
+    console.log("recording is start")
+    // if (this.deepARView) {
+    //   this.deepARView.startRecording()
+    // }
   }
 
 
   finishRecording = () => {
-    if (this.deepARView) {
-      this.deepARView.finishRecording()
-    }
+    this.deepARView.finishRecording()
+    
+    console.log("recording is finished")
+    // if (this.deepARView) {
+    //   this.deepARView.finishRecording()
+    // }
   }
 
   switchCamera = () => {
@@ -127,6 +138,43 @@ class HomeScreen extends React.Component {ß
     }
   }
 
+
+
+  // Asad
+  imageUpload=()=>{
+    ImagePicker.openPicker({
+    
+
+      width: 300,
+      height: 400,
+      cropping: true
+     
+    }).then(image => {
+      console.log(image);
+    });
+    ImagePicker.openPicker({
+      mediaType: "video",
+    }).then((video) => {
+      console.log(video);
+    });
+};
+
+imagecapture=()=>{
+  
+ImagePicker.openCamera({
+  filename: true,
+  cropping: true,
+}).then(image => {
+  console.log('Image console !!!!!!!', image);
+  this.setState({
+      imagePath: image.path,
+      imageType: image.mime,
+      spinner: true,
+  })
+  this.getImage(image);
+
+})
+}
   render() {
 
     const { permissionsGranted, currentEffectIndex } = this.state
@@ -147,10 +195,91 @@ class HomeScreen extends React.Component {ß
           null
         }
 
+        <View style={{flexDirection:'row',width:width,paddingHorizontal:10,position:'absolute',top:30}}>
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/icon-camera.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',width:40,marginTop:10}}>Flip</Text>
+              </TouchableOpacity>  
+           </View>
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/speed-07.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',width:40,marginTop:10}}>Speed</Text>
+              </TouchableOpacity>  
+           </View>
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/filter-08.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',width:40,marginTop:10}}>Filters</Text>
+              </TouchableOpacity>  
+           </View>
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/timer-09.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',width:40,marginTop:10}}>TImer</Text>
+              </TouchableOpacity>  
+           </View>
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/flash-10.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',marginTop:10}}>Flash</Text>
+              </TouchableOpacity>  
+           </View>
+           
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/beauty.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',marginTop:10}}>Beauty</Text>
+              </TouchableOpacity>  
+           </View>
+           <View style={{flex:1,justifyContent:'center'}}>
+              <TouchableOpacity>
+                <Image
+                style={{height:40,width:40}}
+                source={require('../../App/images/icons/sound-12.png')}
+                >
+
+                </Image>
+                <Text style={{color:'#fff', textAlign:'center',marginTop:10}}>Sound</Text>
+              </TouchableOpacity>  
+           </View>
+        </View>
+
         <TouchableOpacity style={styles.cameraSwitchContainer} onPress={() => this.switchCamera()}>
           <Image style={styles.camera} source={cameraSwitchImg} />
         </TouchableOpacity>
-
+        
         <View style={styles.bottomBtnContainer}>
 
           <TouchableOpacity style={{ flex: 1, alignItems: 'center' }} onPress={() => this.onChangeEffect(-1)}>
@@ -175,7 +304,47 @@ class HomeScreen extends React.Component {ß
           <TouchableOpacity style={{ flex: 1, alignItems: 'center' }} onPress={() => this.onChangeEffect(1)}>
             <View style={styles.nextContainer}><Text style={styles.next}>Next</Text></View>
           </TouchableOpacity>
+          
+          
+        </View>
+        <View style={{flexDirection:'row',position:'absolute',bottom:50,justifyContent:'center',alignItems:'center'}}>
+          <View style={{flex:1,marginLeft:30}}>
+            <TouchableOpacity>
+              <Image
+              style={{height:50,width:50}}
+              source={require('../../App/images/icons/effects-13.png')}
+              >
 
+              </Image>
+            </TouchableOpacity>
+          </View>
+          <View style={{flex:1,marginHorizontal:40}}>
+            <TouchableOpacity
+            // onPress={() => this.imagecapture()}
+            onPress={()=>this.props.navigation.navigate('Effect')}
+            // onPressIn={() => this.startRecording()}
+            // onPressOut={() => this.finishRecording()}
+            >
+              <Image
+              style={{height:50,width:50}}
+              source={require('../../App/images/icons/capture-15.png')}
+              >
+
+              </Image>
+            </TouchableOpacity>
+          </View>
+          <View style={{flex:1}}>
+            <TouchableOpacity
+              onPress={() =>{this.imageUpload()}}
+            >
+              <Image
+              style={{height:50,width:50}}
+              source={require('../../App/images/icons/upload-14.png')}
+              >
+
+              </Image>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     )
@@ -214,7 +383,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    bottom: 100,
+    bottom: 150,
     height: 50
   },
   nextContainer: {
@@ -253,7 +422,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 40,
     right: 20,
-    top: 50,
+    top: 200,
     justifyContent: 'center',
     alignItems: 'center',
   },

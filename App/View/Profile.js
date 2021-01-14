@@ -98,7 +98,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-28.jpg')}
        >
          <Text style={[styles.gridColumnRating]}>
-           24.8k
+           248
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -114,7 +114,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-29.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           85
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -130,7 +130,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-30.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           48
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -148,7 +148,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-31.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           28
          </Text>
          <Image
 
@@ -165,7 +165,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-32.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           100
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -182,7 +182,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-33.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           500
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -200,7 +200,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-34.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           4
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -218,7 +218,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-35.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           23
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -235,7 +235,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-36.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           9
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -256,7 +256,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-34.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           16
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -274,7 +274,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-35.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           87
          </Text>
          <Image
          style={[styles.gridColumnImg]}
@@ -291,7 +291,7 @@ var {width,height} = Dimensions.get('window');
        source={require('../images/icons/image-36.jpg')}
        >
           <Text style={[styles.gridColumnRating]}>
-           24.8k
+           67
          </Text>
          <Image
          style={[styles.gridColumnImg]}

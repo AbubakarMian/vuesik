@@ -26,7 +26,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-28.jpg')}
     >
       <Text style={[styles.gridColumnRating]}>
-        24.8k
+        1
       </Text>
       <TouchableOpacity>
     <Image
@@ -44,7 +44,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-29.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        4
       </Text>
       <TouchableOpacity>
     <Image
@@ -62,7 +62,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-30.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        8
       </Text>
       <TouchableOpacity>
     <Image
@@ -82,7 +82,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-31.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        6
       </Text>
       <TouchableOpacity>
     <Image
@@ -100,7 +100,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-32.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        3
       </Text>
       <TouchableOpacity>
     <Image
@@ -118,7 +118,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-33.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        12
       </Text>
       <TouchableOpacity>
     <Image
@@ -138,7 +138,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-34.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        9
       </Text>
       <TouchableOpacity>
     <Image
@@ -158,7 +158,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-35.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        7
       </Text>
       <TouchableOpacity>
     <Image
@@ -177,7 +177,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-36.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        5
       </Text>
       <TouchableOpacity>
     <Image
@@ -199,7 +199,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-34.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        3
       </Text>
       <TouchableOpacity>
     <Image
@@ -219,7 +219,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-35.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.8k
+        1
       </Text>
      <TouchableOpacity>
      <Image
@@ -239,7 +239,7 @@ export default class BlockTab extends React.Component{
     source={require('../../../images/icons/image-36.jpg')}
     >
        <Text style={[styles.gridColumnRating]}>
-        24.
+        11
       </Text>
     <TouchableOpacity>
     <Image
@@ -258,4 +258,4 @@ export default class BlockTab extends React.Component{
             </View>
         );
     }
-}
+}  

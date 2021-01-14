@@ -30,7 +30,7 @@ export default class SignUpModal extends React.Component{
             flexDirection: 'row',
             width: width,
             paddingHorizontal: 10,
-            paddingVertical: 20,
+            // paddingVertical: 20,
             borderBottomWidth: 1,
             backgroundColor:'#fff'
           }}>

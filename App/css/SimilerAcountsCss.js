@@ -10,7 +10,7 @@ export default StyleSheet.create({
                
     center: {
         flex: 1,
-        paddingTop:50,
+       
         alignItems: "center",
         textAlign: "center",
         backgroundColor:'#fff'
@@ -24,7 +24,7 @@ export default StyleSheet.create({
     },
       displayView:{
      
-        flex:1.5,
+        flex:2.5,
         width:width,
         borderBottomWidth:1
       },

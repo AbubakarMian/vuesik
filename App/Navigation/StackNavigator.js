@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from '../View/Splash';
 
@@ -42,44 +42,21 @@ import DataSaver from '../View/DataSaver';
 import HelpFaqs from '../View/Hel&Faqs';
 import TermsOfUse from '../View/TermsOfUse';
 import TopUser from '../View/TopUser';
-import {Header} from 'react-native/Libraries/NewAppScreen';
-import {BottomTabBar} from '@react-navigation/bottom-tabs';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+import { BottomTabBar } from '@react-navigation/bottom-tabs';
 // import DiscoverTabs from "../View/Tabs/DiscoverTabs/DiscoverMain";
 import Likes from '../View/Likes';
 import Comments from '../View/Comments';
 import Mentions from '../View/Mentions';
 import Follow from '../View/Follow';
 import { create } from 'react-test-renderer';
+import iconSet from 'react-native-vector-icons/FontAwesome5';
 const Stack = createStackNavigator()
-// const StackHome=createStackNavigator()
 
-// function HomeStack({}){
-//   return(
-//     <StackHome.Navigator initialRouteName="FirstPage">
-//       <StackHome.Screen name="FirstPage" component={FirstPage}/>
-//       <StackHome.Screen name="SecondPage" component={Se}/>
-//     </StackHome.Navigator>
-    
-//   )
-// }
-// function HomeStack({navigation,route}){
-//   if(route.state && route.state.index>5){
-//     navigation.setOptions({tabBarVisible:true})
-//   }
-//   else{
-//     navigation.setOptions({tabBarVisible:false})
-//   }
-// }
-
-const MainStackNavigator = ({navigation,route}) => {
-  // if(route.state && route.state.index > 5){
-        // navigation.setOptions({tabBarVisible:true})
-      // }
-      // else{
-        // navigation.setOptions({tabBarVisible:false})
-      // }
+const MainStackNavigator = ({ navigation, route }) => {
+  
   return (
-    
+
     <Stack.Navigator
       initialRouteName="SignIn"
       screenOptions={{
@@ -90,16 +67,13 @@ const MainStackNavigator = ({navigation,route}) => {
         headerTintColor: 'white',
         headerBackTitle: 'Back',
       }}
-      navigationOptions={{tabBarVisible: false}}
-     >
-        
+      navigationOptions={{ tabBarVisible: false }}
+    >
+    
       <Stack.Screen
-        name="SignIn"component={SignIn}
-        // navigationOptions={{tabBarVisible: false}}
+        name="SignIn" component={SignIn}
       />
-  
-      {/* options={{ tabBarVisible:false}} */}
-      <Stack.Screen name="DeepArScreen" component={DeepArScreen}/>
+      <Stack.Screen  name="DeepArScreen" component={DeepArScreen} />
       <Stack.Screen name="Likes" component={Likes} />
       <Stack.Screen name="Follow" component={Follow} />
       <Stack.Screen name="Mentions" component={Mentions} />
@@ -136,7 +110,7 @@ const MainStackNavigator = ({navigation,route}) => {
       <Stack.Screen name="Following" component={Following} />
       <Stack.Screen name="VideoComplete" component={VideoComplete} />
       <Stack.Screen name="Post" component={Post} />
-      <Stack.Screen name="Effect" component={Effect} options/>
+      <Stack.Screen name="Effect" component={Effect}  />
       <Stack.Screen name="PhotoEffect" component={PhotoEffect} />
       <Stack.Screen name="MyVues" component={MyVues} />
       <Stack.Screen name="SimilerAcounts" component={SimilerAcounts} />
@@ -148,13 +122,13 @@ const MainStackNavigator = ({navigation,route}) => {
   );
 };
 
-const HomeStackNavigator = (navigation,route) => {
-  if(route.state && route.state.index > 5){
-    navigation.setOptions({tabBarVisible:true})
-  }
-  else{
-    navigation.setOptions({tabBarVisible:false})
-  }
+const HomeStackNavigator = (navigation, route) => {
+  // if(route.state && route.state.index > 5){
+  //   navigation.setOptions({tabBarVisible:true})
+  // }
+  // else{
+  //   navigation.setOptions({tabBarVisible:true})
+  // }
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
@@ -166,8 +140,8 @@ const InboxStackNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="DeepArScreen"
-        component={DeepArScreen}
-        options={{headerShown: false}}
+        component={Inbox}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -178,7 +152,7 @@ const DiscoverStackNavigator = () => {
       <Stack.Screen
         name="DeepAr"
         component={Discover}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -187,7 +161,11 @@ const DiscoverStackNavigator = () => {
 const CameraStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Camera" component={Camera} />
+      <Stack.Screen
+        name="DeepArScreen"
+        component={DeepArScreen}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 };
